@@ -138,7 +138,7 @@ const firebase = {
     ForgotOTPPage,
     ForgotResetPasswordPage,
     NotificationPage,
-    // FaqsPage,
+    FaqsPage,
     ShipListingsPage
   ],
   imports: [
