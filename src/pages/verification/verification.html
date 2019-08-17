@@ -1,0 +1,24 @@
+<!--
+  Generated template for the Verification page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <!--<ion-navbar>
+    <ion-title>verification</ion-title>
+  </ion-navbar>-->
+
+</ion-header>
+
+
+<ion-content class="main_area">
+  <img src="assets/img/ship.png" alt="">
+  <div class="verification_details">
+    <p>Please enter your verification code</p>
+    <ion-input type="text" placeholder="Verification Code"></ion-input>
+    <!--<ion-input type="password" placeholder="Agent PIN"></ion-input>-->
+    <button ion-button block color="secondary" (click)="verifyTapped( )" >Verify</button>
+  </div>
+</ion-content>

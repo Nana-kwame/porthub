@@ -1,0 +1,82 @@
+<!--
+  Generated template for the NotificationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar id='faux_header' color='plain'>
+    <p class='notifications--title'>notifications</p>
+    <ion-buttons left>
+      <button ion-button (click)="close()">
+        <ion-icon name="arrow-back" id='back_button'></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button class='notifications--searchBtn'>
+        <ion-icon name='search' color='darkblue'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list class='notifications--list' no-lines>
+
+    <ion-item detail-push class='notifications__item' no-padding>
+      <img class='notifications__item--img' src='../../assets/img/eye_on_port.png' item-left />
+      <ion-icon name='ios-arrow-forward' color='greyIcon' item-right></ion-icon>
+
+      <div class="notifications__item--textBlock">
+        <p class='notifications__item--main'>New episode from Eye on Port:
+          Episode 42</p>
+        <p class='notifications__item--sub'>Yesterday</p>
+      </div>
+    </ion-item>
+
+    <ion-item class='notifications__item' no-padding>
+      <img class='notifications__item--img' src='../../assets/img/invoice_generated.png' item-left />
+      <ion-icon name='ios-arrow-forward' color='greyIcon' item-right></ion-icon>
+
+      <p class='notifications__item--main'>Invoice #DBN-B7K01744 has been generated for Adomis PLC</p>
+      <p class='notifications__item--sub'>12 minutes ago</p>
+    </ion-item>
+
+    <ion-item class='notifications__item' no-padding>
+      <img class='notifications__item--img' src='../../assets/img/invoice_paid.png' item-left />
+      <ion-icon name='ios-arrow-forward' color='greyIcon' item-right></ion-icon>
+
+      <p class='notifications__item--main'>Paid 2,345 USD successfully for invoice #DBN-B7K01743 to Adomis PLC</p>
+      <p class='notifications__item--sub'>2 minutes ago</p>
+    </ion-item>
+
+    <ion-item class='notifications__item' no-padding>
+      <img class='notifications__item--img' src='../../assets/img/vessel_movement.png' item-left />
+      <ion-icon name='ios-arrow-forward' color='greyIcon' item-right></ion-icon>
+      <p class='notifications__item--main'> Vessel #DBN-B7K01744 has moved from port to dock </p>
+      <p class='notifications__item--sub'>2 minutes ago</p>
+    </ion-item>
+
+    <ion-item class='notifications__item' no-padding>
+      <img class='notifications__item--img' src='../../assets/img/invoice_generated.png' item-left />
+      <ion-icon name='ios-arrow-forward' color='greyIcon' item-right></ion-icon>
+
+      <p class='notifications__item--main'>Invoice #DBN-B7K01744 has been generated for Adomis PLC</p>
+      <p class='notifications__item--sub'>12 minutes ago</p>
+    </ion-item>
+
+    <ion-item class='notifications__item' no-padding>
+      <img class='notifications__item--img' src='../../assets/img/vessel_movement.png' item-left />
+      <ion-icon name='ios-arrow-forward' color='greyIcon' item-right></ion-icon>
+      <p class='notifications__item--main'> Vessel #DBN-B7K01744 has moved from port to dock </p>
+      <p class='notifications__item--sub'>2 minutes ago</p>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

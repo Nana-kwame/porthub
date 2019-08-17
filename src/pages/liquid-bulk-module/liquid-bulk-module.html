@@ -1,0 +1,62 @@
+<!--
+  Generated template for the LiquidBulkModule page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar></ion-toolbar>
+
+  <ion-toolbar color='plain' id='faux_header'>
+    <p id='faux_title'> Liquid Bulk</p>
+
+    <ion-buttons left>
+      <button ion-button icon-only (click)="onBackTapped( )">
+        <ion-icon name="md-arrow-back" id="back_button" *ngIf="!checker"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goToClipboard( )">
+        <ion-icon name="clipboard" id="cart_button">
+          <ion-badge color="lightblue" *ngIf="clipboardCount != 0">
+            {{ clipboardCount }}</ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content class="main_view">
+  <!-- <div id="faux_header">
+    <ion-icon name="arrow-round-back" id="back_button" (click)="onBackTapped( )"></ion-icon>
+    <ion-icon name="clipboard" *ngIf="!checker" id="cart_button" (click)="goToClipboard( )">
+      <ion-badge *ngIf="clipboardCount!=0">{{clipboardCount}}</ion-badge>
+    </ion-icon>
+    <p id="faux_title">Liquid Bulk</p>
+  </div> -->
+  <div class="form_elements">
+    <ion-item class="category_select">
+      <ion-select [(ngModel)]="liquidBulkData.liquidBulkId" multiple="false" placeholder="Select Type Of Liquid Bulk"
+        [selectOptions]="liquidBulkSelectOptions" (ionChange)="pickLiquidBulkName(liquidBulkData.liquidBulkId)">
+        <ion-option *ngFor="let liquidBulkType of liquidBulkTypes" value="{{liquidBulkType.id}}">{{liquidBulkType.item}}</ion-option>
+
+      </ion-select>
+    </ion-item>
+    <br /><br />
+    <ion-input type="number" placeholder="Gross Tonnage" [(ngModel)]="liquidBulkData.grossTonnage"></ion-input>
+  </div>
+
+  <!-- <button class="continue_button finish_button" ion-button block color="secondary" (click)="goToSummary( )" icon-right
+    [disabled]="!liquidBulkData.liquidBulkId || !liquidBulkData.grossTonnage ">Add To Invoice
+
+        </button> -->
+
+  <div class="button_group" style="z-index: 100;">
+    <button class="continue_button finish_button" ion-button icon-right [disabled]="!liquidBulkData.liquidBulkId || !liquidBulkData.grossTonnage"
+      (click)="goToSummary( )">Add To Invoice</button>
+  </div>
+</ion-content>

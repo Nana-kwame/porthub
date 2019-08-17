@@ -1,0 +1,55 @@
+<!--
+  Generated template for the VehicleModule page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div id="faux_header">
+    <ion-icon name="arrow-round-back" id="back_button" (click)="onBackTapped( )"></ion-icon>
+    <ion-icon name="clipboard" *ngIf="!checker" id="cart_button" (click)="goToClipboard( )">
+      <ion-badge color="blueheader" *ngIf="clipboardCount!=0">{{clipboardCount}}</ion-badge>
+    </ion-icon>
+    <p id="faux_title">Vehicle</p>
+  </div>
+  <div class="vehicle_list">
+    <ion-item class="category_select">
+      <ion-select [(ngModel)]="vehicleData.vehicleId" multiple="false" placeholder="Select A Type Of Vehicle" [selectOptions]="selectOptions"
+        (ionChange)="pickVehicleName(vehicleData.vehicleId)">
+        <ion-option *ngFor="let vehicleType of vehicleTypes" value="{{vehicleType.id}}">{{vehicleType.item}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <br/><br/>
+
+    <ion-item class="category_select">
+      <ion-select [(ngModel)]="vehicleData.vehicleStatus" multiple="false" placeholder="Select A Vehicle Status" [selectOptions]="statusSelectOptions"
+        (ionChange)="pickVehicleStatusName(vehicleData.vehicleStatus)">
+        <ion-option *ngFor="let vehicleStatus of vehicleStatuses" value="{{vehicleStatus.vehicleStatus}}">{{vehicleStatus.vehicleStatusName}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <br/><br/>
+
+    <ion-input [(ngModel)]="vehicleData.quantity" type="number" placeholder="Quantity"></ion-input>
+  </div>
+  <!-- <button class="continue_button finish_button" ion-button block color="secondary" (click)="goToSummary( )" icon-right
+icleData.vehicleId || !vehicleData.vehicleStatus || !vehicleData.quantity">Add To Invoice
+
+        </button> -->
+        <button class="continue_button finish_button" ion-button icon-right [disabled]="!vehicleData.vehicleId || !vehicleData.vehicleStatus || !vehicleData.quantity"
+        (click)="goToSummary( )">Add To Invoice</button>
+  <!-- <div class="button_group" style="z-index: 100;">
+    <div class="button_splitter">
+      <button class="continue_button finish_button" ion-button color="secondary" icon-right (click)="navToRoot()">Calculator Home</button>
+    </div>
+ class="button_splitter">
+
+    </div>
+  </div> -->
+</ion-content>

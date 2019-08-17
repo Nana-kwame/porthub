@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+
+<ion-content class='main_content'>
+  <div class="loader" *ngIf="loading">
+    <ion-spinner color="primary">
+    </ion-spinner>
+    <br> Calculating...
+  </div>
+  <div *ngIf="!loading">
+    <div id="faux_header">
+      <ion-icon name="arrow-back" id="back_button" (click)="onBackTapped( )"></ion-icon>
+      <button ion-button icon-only color='plain' class='addBtn' (click)="navToHead()">
+        <ion-icon name='add-circle' color='blueheader'>
+        </ion-icon>
+      </button>
+      <p id="faux_title">Unoffical Invoice</p>
+    </div>
+    <div class="invoice_data">
+
+      <div *ngIf="returnObj.shoreHandlingInvoiceData.invoiceDataFor20ft">
+        <p class='invoice_data--header'>20ft Container</p>
+        <div class="result_list" *ngFor="let invoice of returnObj.shoreHandlingInvoiceData.invoiceDataFor20ft">
+          <span class="calc_info">
+            <span class="info result_item">{{invoice.subCategory}} - {{invoice.item}}</span>
+            <span class="info result_value" *ngIf="invoice.charge">{{parsedData(invoice.charge)}} x
+              {{invoice.quantity}} {{invoice.chargeType}}</span>
+
+          </span>
+          <span class="calc_price">
+            <span class="info result_item"></span>
+            <span class="info result_details total_amount">{{parseData(invoice.subtotal)}}
+              {{returnObj.overallChargeModel.currency}}</span>
+          </span>
+        </div>
+      </div>
+
+      <div *ngIf="returnObj.shoreHandlingInvoiceData.invoiceDataFor40ft">
+        <p class='invoice_data--header'>40ft Container</p>
+        <div class="result_list" *ngFor="let invoice of returnObj.shoreHandlingInvoiceData.invoiceDataFor40ft">
+          <span class="calc_info">
+            <span class="info result_item">{{invoice.subCategory}} - {{invoice.item}}</span>
+            <span class="info result_value" *ngIf="invoice.charge">{{parsedData(invoice.charge)}} x
+              {{invoice.quantity}} {{invoice.chargeType}}</span>
+
+          </span>
+          <span class="calc_price">
+            <span class="info result_item"></span>
+            <span class="info result_details total_amount">{{parseData(invoice.subtotal)}}
+              {{returnObj.overallChargeModel.currency}}</span>
+          </span>
+        </div>
+      </div>
+
+      <div *ngIf="returnObj.shoreHandlingInvoiceData.invoiceDataFor20ftOut">
+        <p class='invoice_data--header'>20ft OOG Container</p>
+        <div class="result_list" *ngFor="let invoice of returnObj.shoreHandlingInvoiceData.invoiceDataFor20ftOut">
+          <span class="calc_info">
+            <span class="info result_item">{{invoice.subCategory}} - {{invoice.item}}</span>
+            <span class="info result_value" *ngIf="invoice.charge">{{parsedData(invoice.charge)}} x
+              {{invoice.quantity}} {{invoice.chargeType}}</span>
+
+          </span>
+          <span class="calc_price">
+            <span class="info result_item"></span>
+            <span class="info result_details total_amount">{{parseData(invoice.subtotal)}}
+              {{returnObj.overallChargeModel.currency}}</span>
+          </span>
+        </div>
+      </div>
+
+      <div *ngIf="returnObj.shoreHandlingInvoiceData.invoiceDataFor40ftOut">
+        <p class='invoice_data--header'>40ft OOG Container</p>
+        <div class="result_list" *ngFor="let invoice of returnObj.shoreHandlingInvoiceData.invoiceDataFor40ftOut">
+          <span class="calc_info">
+            <span class="info result_item">{{invoice.subCategory}} - {{invoice.item}}</span>
+            <span class="info result_value" *ngIf="invoice.charge">{{parsedData(invoice.charge)}} x
+              {{invoice.quantity}} {{invoice.chargeType}}</span>
+
+          </span>
+          <span class="calc_price">
+            <span class="info result_item"></span>
+            <span class="info result_details total_amount">{{parseData(invoice.subtotal)}}
+              {{returnObj.overallChargeModel.currency}}</span>
+          </span>
+        </div>
+      </div>
+      <div *ngIf="returnObj.shoreHandlingInvoiceData.importVATRate">
+        <p class='invoice_data--header'>VAT Charges</p>
+        <div class="result_list" *ngFor="let invoice of returnObj.shoreHandlingInvoiceData.importVATRate">
+          <span class="calc_info">
+            <span class="info result_item">{{invoice.item}}</span>
+            <span class="info result_value" *ngIf="invoice.charge">{{invoice.chargeType}}</span>
+
+          </span>
+          <span class="calc_price">
+            <span class="info result_item"></span>
+            <span class="info result_details total_amount">{{parseData(invoice.subtotal)}}
+              {{returnObj.overallChargeModel.currency}}</span>
+          </span>
+        </div>
+      </div>
+      <div class="overall_total">
+        <span class="half_1_overall_total">Total Amount Due</span>
+        <span class="half_2_overall_total">{{parseData(returnObj.overallChargeModel.amount)}}
+          {{returnObj.overallChargeModel.currency}}</span>
+      </div>
+    </div>
+    <!-- <button class="continue_button finish_button" ion-button block color="secondary" icon-right>Done</button> -->
+
+
+    <div class="button_group">
+      <button class="continue_button finish_button" ion-button icon-right (click)="navToRoot()">Calculator
+        Home</button>
+    </div>
+  </div>
+</ion-content>

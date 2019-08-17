@@ -1,0 +1,56 @@
+page-edit-calculator-entries-modal {
+.main_modal_content{
+    
+}
+
+#close_button{
+color:#fff;
+}
+
+.toolbar-background{
+    background-color: #124676;
+}
+
+.item.item-block .item-inner{
+border:none;
+}
+
+.item_list{
+padding-top:50px;
+}
+
+.item-cover{
+border-bottom:#e0e0e0 solid 1px;
+height: 50px;
+}
+
+.item{
+    height: 50px;
+    border-bottom:#e0e0e0 solid 1px;
+}
+
+.charge_label{
+    font-size: 1.3rem;
+    display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; 
+  width:80%; 
+  white-space: normal;
+}
+
+.charge_indicator{
+    font-size: 1.5rem;
+    position: absolute;
+    right:0;
+    top:5px;
+  
+}
+
+.done_button{
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    margin: 0;
+}
+
+}

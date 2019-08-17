@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+
+  <ion-toolbar id='faux_header' color='plain'>
+    <p id="faux_title">Container</p>
+
+    <ion-buttons left>
+      <button ion-button icon-only (click)='onBackTapped()' color='plain'>
+        <ion-icon name="arrow-back" id='back_button'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content>
+  <!-- <div id="faux_header">
+    <p id="faux_title">Container</p>
+  </div> -->
+  <div class="vehicle_list">
+    <br />
+    <h6>Selected Item</h6>
+    <h5>{{containerData[index].name}} with {{containerData[index].containerStatusName}}</h5>
+    <br />
+    <!--<h6>Gross Weight</h6>
+    <ion-input [(ngModel)]="breakBulkData[index].grossW" type="number" placeholder="Gross Weight"></ion-input>
+    <br/>
+    <h6>Gross Volume</h6>
+    <ion-input [(ngModel)]="breakBulkData[index].grossCBM" type="number" placeholder="Gross Volume"></ion-input>
+    <br/>-->
+    <h6>Quantity</h6>
+    <ion-input [(ngModel)]="containerData[index].quantity" type="number" placeholder="Quantity"></ion-input>
+
+  </div>
+
+  <div class='btn_group'>
+    <button class="continue_button finish_button" ion-button  (click)="onBackTapped( )"
+      icon-right>
+      Done
+    </button>
+  </div>
+
+</ion-content>

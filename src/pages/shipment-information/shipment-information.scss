@@ -1,0 +1,161 @@
+page-shipment-information {
+
+  .page__toolbar {
+    width: 100%;
+    min-height: 24px;
+    background-color: #0b7bd6 !important;
+  }
+
+  .blue_quarter {
+    height: 23rem;
+    background-color: #0d92ff;
+    padding-top: 6rem;
+
+    &--close_btn {
+      background-color: #0d92ff;
+      box-shadow: none;
+      position: absolute;
+      transform: translate(40%, -150%);
+    }
+  }
+
+  .blue_quarter h4 {
+    margin: 0;
+    text-align: center;
+    padding-bottom: 1rem;
+    color: #fff;
+  }
+
+
+
+  .white_circle {
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+    background-color: #fff;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding-top: 1.8rem;
+    padding: 5px;
+  }
+
+  ion-icon {
+    display: block;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 6rem;
+    color: #124676;
+  }
+
+  .label {
+    color: #a7a8a9;
+    padding-left: 0;
+
+  }
+
+  .data {
+    text-align: right;
+    color: #a7a8a9;
+    padding-right: 0;
+  }
+
+  .first_entry {
+    border-bottom: #cfd8e1 1px solid;
+  }
+
+  .final_entry {
+    border-bottom: none;
+
+  }
+
+  .invoice_data {
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+    padding-top: 1rem;
+  }
+
+  .invoice_data button {
+
+    width: 80%;
+    left: 0;
+    right: 0;
+    margin: 4rem auto;
+  }
+
+  ion-grid {
+    height: 40px;
+    padding-right: 0;
+    padding-left: 0;
+
+  }
+
+
+
+  .main__content {
+    background-color: #f8f9fb;
+
+    &--card--image {
+      position: absolute;
+      transform: scale(0.4) translate(146%, -25%);
+      z-index: 1;
+    }
+
+    &--card {
+      position: absolute;
+      width: 328px;
+      // height: 326px;
+      border-radius: 18px;
+      // transform: translate(2.5%, -50%);
+      background-color: white;
+      box-shadow: 0 1px 5px 0 rgba(135, 148, 169, 0.10);
+      padding-bottom: 300px;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(2.5%);
+      top: 11%;
+      z-index: 0;
+
+      &_header {
+        font-size: 14px;
+        color: #8794a8;
+        text-align: center;
+        margin-top: 16px;
+      }
+
+      &_subheader {
+        text-align: center;
+        font-size: 16px;
+        color: #011f46;
+        font-weight: 600;
+        margin-top: -3%;
+      }
+
+      &_content--title {
+        font-size: 14px;
+        color: #8794a8;
+      }
+
+      &_content--value {
+        font-size: 17px;
+        color: #011f46;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .row {
+    padding-bottom: 24px;
+  }
+
+  .row p {
+    flex-basis: 100%;
+  }
+
+}
+
+ion-scroll {
+  height: 100px;
+}

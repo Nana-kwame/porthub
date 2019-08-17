@@ -1,0 +1,188 @@
+<ion-header>
+  <ion-toolbar> </ion-toolbar>
+
+  <ion-toolbar color='plain' id='faux_header'>
+    <p id="faux_title">Cargo Summary</p>
+
+    <ion-buttons left>
+      <button ion-button icon-only>
+        <ion-icon name="arrow-back" id="back_button" (click)="onBackTapped()"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button icon-only color="secondary" id="go_to_port_dues" (click)="goToPortDuesPage( )">
+        <ion-icon name="add-circle" color="blueheader"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div id="faux_header">
+
+  </div> -->
+  <div class="item_list">
+    <div>
+      <ion-card class="main_card remove_border" *ngIf="breakBulkData?.length > 0 && showBBData">
+        <ion-card-content class="card_heading">
+          Break Bulk
+        </ion-card-content>
+        <ion-card class="aux_card" *ngFor="let breakBulkdata of breakBulkData; let i = index">
+          <ion-card-content>
+            <div (click)="editBreakBulkModal(i)" class="item_desc">
+              <div>
+                Type:
+                <span class="item_desc_info">{{ breakBulkdata?.name }}</span>
+              </div>
+              <div>
+                Danger Status:
+                <span class="item_desc_info">{{
+                  breakBulkdata?.dangerName
+                  }}</span>
+              </div>
+              <div>
+                Gross Weight:
+                <span class="item_desc_info">{{ breakBulkdata?.grossW }} tons</span>
+              </div>
+              <div>
+                Gross Volume:
+                <span class="item_desc_info">{{ breakBulkdata?.grossCBM }} cubic meters</span>
+              </div>
+              <div>
+                Quantity:
+                <span class="item_desc_info">{{
+                  breakBulkdata?.quantity
+                  }}</span>
+              </div>
+            </div>
+            <ion-icon name="trash" id="delete_item_bb" (click)="removeBreakBulkItem(i)"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-card>
+    </div>
+    <div>
+      <ion-card class="main_card remove_border" *ngIf="containerData?.length > 0 && showCData">
+        <ion-card-content class="card_heading">
+          Containers
+        </ion-card-content>
+        <ion-card class="aux_card" *ngFor="let containerdata of containerData; let i = index">
+          <ion-card-content>
+            <div (click)="editContainerModal(i)" class="item_desc">
+              <div>
+                Type:
+                <span class="item_desc_info">{{ containerdata?.name }}</span>
+              </div>
+              <div>
+                Status:
+                <span class="item_desc_info">{{
+                  containerdata?.containerStatusName
+                  }}</span>
+              </div>
+              <div>
+                Quantity:
+                <span class="item_desc_info">{{
+                  containerdata?.quantity
+                  }}</span>
+              </div>
+            </div>
+            <ion-icon name="trash" id="delete_item_c" (click)="removeContainerItem(i)"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-card>
+    </div>
+    <div>
+      <ion-card class="main_card remove_border" *ngIf="dryBulkData?.length > 0 && showDBData">
+        <ion-card-content class="card_heading">
+          Dry Bulk
+        </ion-card-content>
+        <ion-card class="aux_card" *ngFor="let dryBulkdata of dryBulkData; let i = index">
+          <ion-card-content>
+            <div (click)="editDryBulkModal(i)" class="item_desc_db">
+              <div>
+                Type:
+                <span class="item_desc_info">{{ dryBulkdata?.name }}</span>
+              </div>
+              <div>
+                Discharge Type:
+                <span class="item_desc_info">{{
+                  shorten(dryBulkdata?.dischargeName)
+                  }}</span>
+              </div>
+              <div>
+                Gross Tonnage:
+                <span class="item_desc_info">{{ dryBulkdata?.grossTonnage }} tons</span>
+              </div>
+            </div>
+
+            <ion-icon name="trash" id="delete_item_db" (click)="removeDryBulkItem(i)"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-card>
+    </div>
+    <div>
+      <ion-card class="main_card remove_border" *ngIf="liquidBulkData != '' && showLBData">
+        <ion-card-content class="card_heading">
+          Liquid Bulk
+        </ion-card-content>
+        <ion-card class="aux_card">
+          <ion-card-content>
+            <div (click)="editLiquidBulkModal()" class="item_desc">
+              <div>
+                Type:
+                <span class="item_desc_info">{{ liquidBulkData?.name }}</span>
+              </div>
+              <div>
+                Gross Tonnage:
+                <span class="item_desc_info">{{ liquidBulkData?.grossTonnage }} tons</span>
+              </div>
+            </div>
+
+            <ion-icon name="trash" id="delete_item_lb" (click)="removeLiquidBulkItem()"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-card>
+    </div>
+    <div>
+      <ion-card class="main_card remove_border" *ngIf="vehicleData?.length > 0 && showVData">
+        <ion-card-content class="card_heading">
+          Vehicles
+        </ion-card-content>
+        <ion-card class="aux_card" *ngFor="let vehicledata of vehicleData; let i = index">
+          <ion-card-content>
+            <div (click)="editVehicleModal(i)" class="item_desc">
+              <div>
+                Type:
+                <span class="item_desc_info">{{ vehicledata?.name }}</span>
+              </div>
+              <div>
+                Status:
+                <span class="item_desc_info">{{
+                  vehicledata?.vehicleStatusName
+                  }}</span>
+              </div>
+              <div>
+                Quantity:
+                <span class="item_desc_info">{{ vehicledata?.quantity }}</span>
+              </div>
+            </div>
+
+            <ion-icon name="trash" id="delete_item_v" (click)="removeVehicleItem(i)"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-card>
+    </div>
+  </div>
+  <!-- <ion-grid class="alt_button">
+    <ion-row>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+  <div class='btn_group'>
+    <button ion-button class="finish_button bottom_btn" (click)="goToResultsPage( )">
+      Generate Invoice
+    </button>
+  </div>
+</ion-content>

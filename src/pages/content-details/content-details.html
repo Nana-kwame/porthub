@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar> </ion-toolbar>
+
+  <ion-toolbar id='faux_header' color='plain'>
+    <p id="faux_title">Content Details</p>
+
+    <ion-buttons left>
+      <button ion-button icon-only (click)="onBackTapped( )">
+        <ion-icon name="arrow-back" id="back_button" *ngIf="!checker"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goToClipboard( )">
+        <ion-icon name="md-clipboard" id="cart_button">
+          <ion-badge color="lightblue" *ngIf="clipboardCount != 0">
+            {{ clipboardCount }}</ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="main_view">
+  <!-- <div class="loader" *ngIf="loading">
+    <ion-spinner color="primary">
+    </ion-spinner>
+    <br> Calculating...
+  </div>
+  <div *ngIf="!loading"> -->
+  <div class="form_contents">
+    <div class="check_box_block" *ngFor="let content of contents; let i = index">
+      <div class="faux_radio_button lookup_options" style="margin-bottom: 15px;" (click)="contentDetailClicked(i, content)">
+        <span class="check_selector">
+          <div style="position:relative; width:100%; height:100%;">
+            <div id="check_mark_box" [ngClass]="{ check_box_clicked: content.itemSelected }">
+              <!-- <img src="assets/img/check.svg" alt="" id="check_mark" [ngClass]="{select_check:content.itemSelected}"> -->
+              <ion-icon name="checkmark" id="check_mark" [ngClass]="{ select_check: content.itemSelected }"></ion-icon>
+            </div>
+          </div>
+        </span>
+        <p class="service_information_check">{{ content.content }}</p>
+      </div>
+      <div class="payment_method_param" [ngClass]="{ show_engine_params: content.show_engine_options }">
+        <input type="number" placeholder="Quantity" [(ngModel)]="content.quantity" />
+      </div>
+      <div class="vehicle_param" [ngClass]="{ show_vehicle_params: content.show_vehicle_options }">
+        <div class="faux_radio_button lookup_options inner_check_box" (click)="vehicleTypeClicked(i, vehicleType)"
+          *ngFor="let vehicleType of vehicleTypes; let i = index">
+          <span class="check_selector">
+            <div style="position:relative; width:100%; height:100%;">
+              <div id="check_mark_box" [ngClass]="{ select_check: vehicleType.itemSelected}">
+                <!-- <img src="assets/img/check.svg" alt="" id="check_mark" [ngClass]="{select_check:vehicleType.itemSelected}"> -->
+                <ion-icon name="checkmark" id="check_mark" [ngClass]="{ select_check: vehicleType.itemSelected }" color="light"></ion-icon>
+              </div>
+              <p class="selected_amount" *ngIf="vehicleType.quantity">
+                ( {{ vehicleType.quantity }} )
+              </p>
+            </div>
+          </span>
+          <p class="service_information_check">{{ vehicleType.type }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <button class="continue_button finish_button" ion-button block color="secondary" icon-right style="z-index: 100;" (click)="goToMisc()"
+    [disabled]="counter<1">Continue</button> -->
+  <div class="button_group" style="z-index: 100;">
+
+    <button class="continue_button finish_button" ion-button icon-right [disabled]="counter < 1" (click)="goToMisc()">
+      Continue
+    </button>
+  </div>
+
+  <!-- </div> -->
+</ion-content>

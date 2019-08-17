@@ -1,0 +1,49 @@
+<!--
+  Generated template for the EditCalculatorEntries page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--<ion-header>
+
+  <ion-navbar>
+    <ion-title>Selected Summary</ion-title>
+  </ion-navbar>
+
+</ion-header>-->
+
+
+<ion-content class="main_view">
+<div id="faux_header">
+    Selected Summary
+      <!--<ion-icon name="arrow-round-back" id="back_button" (click)="onBackTapped( )"></ion-icon>-->
+    </div>
+  <div class="item_list">
+      <ion-item *ngFor="let storedItem of storedItems" (click)="showItemOptions(storedItem)" >
+        <span class="item_label">{{storedItem.item}} </span>
+        <span class="item_label" *ngIf="storedItem.groupCategoryName != ''">({{storedItem.groupCategoryName}})</span>
+      </ion-item>
+    </div>
+    <button class="continue_button" ion-button color="secondary" (click)="goToCalculatorPage( )" icon-right >
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-90 id="button_text">Add Items</ion-col>
+                    <ion-col width-10>
+                        <ion-icon name="add"></ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </button>
+
+        <button class="continue_button" ion-button color="secondary" (click)="goToResultsPage( )" icon-right  *ngIf="storedItems.length!=0">
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-90 id="button_text">Generate</ion-col>
+                    <ion-col width-10>
+                        <ion-icon name="arrow-forward"></ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </button>
+
+</ion-content>

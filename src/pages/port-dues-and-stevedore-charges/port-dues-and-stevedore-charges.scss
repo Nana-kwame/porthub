@@ -1,0 +1,173 @@
+page-port-dues-and-stevedore-charges {
+  .main_view {
+    background-color: #f8f9fb;
+  }
+
+  .category_select {
+    border: #e0e0e0 solid 1px;
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 8px;
+    height: 50px;
+
+  }
+
+  .category_select .select-icon {
+    position: absolute;
+    right: 16px;
+  }
+
+  .category_select.item-block .item-inner {
+    border: none;
+  }
+
+  .select {
+    padding: 0;
+    max-width: 90%;
+  }
+
+  .continue_button ion-grid {
+    padding: 0;
+  }
+
+  // .continue_button{
+  //     left:0;
+  //     right:0;
+  //     margin:0 auto;
+  //     display: block;
+  //     // margin-top: 100px;
+  //     width:90%;
+  //     position: absolute;
+  //     bottom:20px;
+  // }
+  .continue_button ion-icon {
+    font-size: 3rem;
+    padding-left: 0;
+    padding-right: 2rem;
+  }
+
+  .continue_button ion-col {
+    //    padding-right: 2rem;
+    padding-left: 0;
+
+  }
+
+  #button_text {
+    text-align: center;
+    font-weight: 400;
+    padding-top: 1.2rem;
+    font-size: 1.6rem;
+
+
+  }
+
+  .form_elements {
+    padding-top: 20vh;
+  }
+
+  #faux_header {
+    height: 56px;
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+
+  }
+
+  #go_to_port_dues {
+    box-shadow: none;
+    transform: translate(300px, -75%);
+  }
+
+  #back_button {
+    // text-align: left;
+    // padding: 5px 0 0px 1.7rem;
+    // color: #011f46;
+    // font-size: 2.2rem;
+    // transform: translateY(18%);
+    // position: absolute;
+  }
+
+
+
+  #faux_title {
+    margin: 0;
+    /* display: inline-block; */
+    text-align: center;
+    padding-top: 12px;
+    color: #011f46;
+    font-size: 19px;
+    line-height: 22px;
+    letter-spacing: -.09px;
+    font-weight: 600;
+    font-size: 1.6rem;
+
+
+  }
+
+  .finish_button {
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0rem auto 0rem auto;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0;
+    height: 50px;
+    background-color: #0d92ff;
+  }
+
+  .alt_button {
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0;
+    height: 50px;
+  }
+
+  .alt_button ion-col,
+  ion-row {
+    padding: 0;
+    height: 50px;
+  }
+
+  .alt_button button {
+    height: 50px;
+    border-radius: 0;
+  }
+
+  #cart_button {
+    //   text-align: right;
+    // padding: 5px 0 0px 1.7rem;
+    // font-size: 3rem;
+    // color: #011f46;
+    // position: absolute;
+    right: 1.7rem;
+  }
+
+  // #cart_button ion-badge {
+  //   //   text-align: right;
+  //   border-radius: 50%;
+  //   margin-top: 8px;
+  //   //   margin-left:10px;
+  //   font-size: 1rem;
+  //   color: #fff;
+  //   position: absolute;
+  //   right: -10px;
+  //   height: 20px;
+  //   width: 20px;
+  //   padding: 5px 3px;
+  //   bottom: 20px;
+  //   border: 1px solid white;
+  //   font-family: 'IBM Plex Sans', sans-serif;
+  //   //   background: transparent;
+  // }
+
+  .scroll-content {
+    margin-bottom: 0 !important;
+    overflow-y: hidden;
+  }
+
+}

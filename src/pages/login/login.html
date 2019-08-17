@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color=blueheader class='custom_nav'>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="main_area" id="my">
+  <!-- <img src="assets/img/arrow_back.png" alt="" class="back_btn_login" (click)="onBackPressed()"> -->
+  <!-- <p class="label_name">Login</p>
+  <div class="label_dot"></div> -->
+  <img src="assets/img/check.png" alt="" class="compass">
+  <div class="text-block">
+    <p class="wtp">Welcome {{agentData?.firstName}} {{agentData?.lastName}}</p>
+    <p class="login_desc">Let’s set a new PIN for your account. <br> Tap the button below!</p>
+  </div>
+
+  <div class='btn-group'>
+    <button ion-button color='light' class='login_btn' (click)="loginTapped()">
+      <ion-label>
+        Set a new PIN
+      </ion-label>
+
+      <ion-icon name='ios-arrow-forward' color='blueheader'></ion-icon>
+    </button>
+  </div>
+
+</ion-content>

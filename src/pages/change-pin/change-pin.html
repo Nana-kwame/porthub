@@ -1,0 +1,145 @@
+<ion-header>
+  <ion-toolbar color='light'>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class='set-pincode' [hidden]=hideEnterPin>
+    <img src="assets/img/arrow_back.png" alt="" class="arrow-back_btn" (click)="onBackPressed()">
+    <p class="set-pincode--header">Create a PIN</p>
+    <p class="set-pincode--subheader">Please create a PIN</p>
+
+    <div class="pin_code">
+      <!-- <div class="flex-test"> -->
+      <div class="dim">
+        <input type="tel" class="pin_box set_pin_box" [(ngModel)]="pinCodeBoxes[0]" [attr.maxlength]="1" (keyup)="inputNavigator( $event,pinCodeBoxes[0])"
+          pattern="^[1-9]+[0-9]*$" disbaled='true' [ngClass]="{'active-pin_box': pinCodeBoxes[0] === undefined, 'visited-pin_box': pinCodeBoxes[0] !== undefined }" readonly />
+      </div>
+      <div class="dim">
+        <input type="tel" class="pin_box set_pin_box" [(ngModel)]="pinCodeBoxes[1]" [attr.maxlength]="1" (keyup)="inputNavigator( $event,pinCodeBoxes[1])"
+          pattern="^[1-9]+[0-9]*$" disabled='true' [ngClass]="{'active-pin_box': pinCodeBoxes[0] !== undefined && pinCodeBoxes[1] === undefined, 'visited-pin_box': pinCodeBoxes[1] !== undefined }" readonly />
+      </div>
+      <div class="dim">
+        <input type="tel" class="pin_box set_pin_box" [(ngModel)]="pinCodeBoxes[2]" [attr.maxlength]="1" (keyup)="inputNavigator($event ,pinCodeBoxes[2])"
+          pattern="^[1-9]+[0-9]*$" disabled='true' [ngClass]="{'active-pin_box': pinCodeBoxes[1] !== undefined  && pinCodeBoxes[2] === undefined, 'visited-pin_box': pinCodeBoxes[2] !== undefined }"readonly />
+      </div>
+      <div class="dim">
+        <input type="tel" class="pin_box set_pin_box" [(ngModel)]="pinCodeBoxes[3]" [attr.maxlength]="1" (keyup)="inputNavigator($event ,pinCodeBoxes[3])"
+          pattern="^[1-9]+[0-9]*$" disabled='true' [ngClass]="{'active-pin_box': pinCodeBoxes[2] !== undefined  && pinCodeBoxes[3] === undefined, 'visited-pin_box': pinCodeBoxes[3] !== undefined }" readonly/>
+      </div>
+      <div class="dim">
+        <input type="tel" class="pin_box set_pin_box" [(ngModel)]="pinCodeBoxes[4]" [attr.maxlength]="1" (keyup)="inputNavigator($event ,pinCodeBoxes[4])"
+          pattern="^[1-9]+[0-9]*$" disabled='true' [ngClass]="{'active-pin_box': pinCodeBoxes[3] !== undefined  && pinCodeBoxes[4] === undefined, 'visited-pin_box': pinCodeBoxes[4] !== undefined }"readonly />
+      </div>
+      <div class="dim">
+        <input type="tel" class="pin_box set_pin_box" [(ngModel)]="pinCodeBoxes[5]" [attr.maxlength]="1" (keyup)="inputNavigator($event ,pinCodeBoxes[5])"
+          pattern="^[1-9]+[0-9]*$" disabled='true' [ngClass]="{'active-pin_box': pinCodeBoxes[4] !== undefined  && pinCodeBoxes[5] === undefined, 'visited-pin_box': pinCodeBoxes[5] !== undefined }" readonly/>
+      </div>
+    </div>
+  </div>
+
+
+  <div [hidden]=hideVerifyPin>
+    <img src="assets/img/arrow_back.png" alt="" class="arrow-back_btn" (click)="mainBtnTapped()">
+    <p class="set-pincode--header">Verify PIN</p>
+    <p class="set-pincode--subheader">Please re-enter the PIN you just created</p>
+
+    <div class="pin_code">
+      <div class="dim">
+        <input type="tel" class="pin_box confirm_pin_box" [(ngModel)]="confirmPinCodeBoxes[0]" [attr.maxlength]="1"
+          (keyup)="confirmInputNavigator($event ,pinCodeBoxes[0])"
+          pattern="^[1-9]+[0-9]*$" disbaled='true' [ngClass]="{'active-pin_box': confirmPinCodeBoxes[0] === undefined, 'visited-pin_box': confirmPinCodeBoxes[0] !== undefined }" />
+
+      </div>
+      <div class="dim">
+        <input type="tel" class="pin_box confirm_pin_box" [(ngModel)]="confirmPinCodeBoxes[1]" [attr.maxlength]="1"
+          (keyup)="confirmInputNavigator($event ,pinCodeBoxes[1])"
+          pattern="^[1-9]+[0-9]*$" disbaled='true' [ngClass]="{'active-pin_box': confirmPinCodeBoxes[0] !== undefined && confirmPinCodeBoxes[1] === undefined, 'visited-pin_box': confirmPinCodeBoxes[1] !== undefined }" />
+      </div>
+      <div class="dim">
+        <input type="nujmber" class="pin_box confirm_pin_box" [(ngModel)]="confirmPinCodeBoxes[2]"
+          [attr.maxlength]="1" (keyup)="confirmInputNavigator( $event,pinCodeBoxes[2])"
+          pattern="^[1-9]+[0-9]*$"  disbaled='true' [ngClass]="{'active-pin_box': confirmPinCodeBoxes[1]  !== undefined && confirmPinCodeBoxes[2] === undefined, 'visited-pin_box': confirmPinCodeBoxes[2] !== undefined }"/>
+      </div>
+      <div class="dim">
+        <input type="nujmber" class="pin_box confirm_pin_box" [(ngModel)]="confirmPinCodeBoxes[3]"
+          [attr.maxlength]="1" (keyup)="confirmInputNavigator($event ,pinCodeBoxes[3])"
+          pattern="^[1-9]+[0-9]*$"  disbaled='true' [ngClass]="{'active-pin_box': confirmPinCodeBoxes[2]  !== undefined && confirmPinCodeBoxes[3] === undefined, 'visited-pin_box': confirmPinCodeBoxes[3] !== undefined }"/>
+      </div>
+      <div class="dim">
+        <input type="tel" class="pin_box confirm_pin_box" [(ngModel)]="confirmPinCodeBoxes[4]" [attr.maxlength]="1"
+          (keyup)="confirmInputNavigator($event ,pinCodeBoxes[4])"
+          pattern="^[1-9]+[0-9]*$"  disbaled='true' [ngClass]="{'active-pin_box': confirmPinCodeBoxes[3]  !== undefined && confirmPinCodeBoxes[4] === undefined, 'visited-pin_box': confirmPinCodeBoxes[4] !== undefined }"/>
+      </div>
+      <div class="dim">
+        <input type="tel" class="pin_box confirm_pin_box" [(ngModel)]="confirmPinCodeBoxes[5]" [attr.maxlength]="1"
+          (keyup)="confirmInputNavigator($event ,pinCodeBoxes[5])"
+          pattern="^[1-9]+[0-9]*$"  disbaled='true' [ngClass]="{'active-pin_box': confirmPinCodeBoxes[4]   !== undefined && confirmPinCodeBoxes[5] === undefined, 'visited-pin_box': confirmPinCodeBoxes[5] !== undefined }"/>
+      </div>
+    </div>
+  </div>
+
+  <ion-grid class='num-pad'>
+    <ion-row>
+      <ion-col>
+        <button ion-button large color='plain' class='num-pad--button' (click)='enterCode(1)'>1</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button large color='plain' class='num-pad--button' (click)='enterCode(2)'>2</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button large color='plain' class='num-pad--button' (click)='enterCode(3)'>3</button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button large color='plain' class='num-pad--button' (click)='enterCode(4)'>4</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button large color='plain' class='num-pad--button' (click)='enterCode(5)'>5</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button large color='plain' class='num-pad--button' (click)='enterCode(6)'>6</button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button large color='plain' class='num-pad--button' (click)='enterCode(7)'>7</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button large color='plain' class='num-pad--button' (click)='enterCode(8)'>8</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button large color='plain' class='num-pad--button' (click)='enterCode(9)'>9</button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button large color='plain' class='num-pad--button' disabled></button>
+      </ion-col>
+      <ion-col>
+        <button ion-button large color='plain' class='num-pad--button' (click)='enterCode(0)'>0</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button large color='plain' class='num-pad--button' (click)='deleleEntry()'>
+          <ion-icon name='backspace'></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+  <button ion-button full class='footer-btn' (click)='mainBtnTapped()'>
+    <ion-label text-capitalize>{{btnTxt}}</ion-label>
+  </button>
+
+  <!-- <ion-toolbar transparent>
+  </ion-toolbar> -->
+</ion-footer>

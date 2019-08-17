@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+
+  </ion-toolbar>
+
+  <ion-toolbar class='invoice-header' color='plain'>
+    <p class='invoice-header--title' *ngIf=!search [ngClass]="{'fadeIn': !search}">Service Requests</p>
+
+    <ion-searchbar (ionInput)='searchItems($event)' *ngIf="search" [ngClass]="{'zoomIn': search, 'fadeOut':!search}">
+    </ion-searchbar>
+
+    <ion-buttons end>
+      <button ion-button class='invoice-header--searchBtn' (click)="searchButtonTapped()">
+        <ion-icon name='search' color='darkblue'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content class="content">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="loader" *ngIf="!serviceRequests" [hidden]='errorState'>
+    <ion-spinner color="primary">
+    </ion-spinner>
+    <br> Loading...
+  </div>
+
+  <div class="content__error-state" [hidden]='!errorState'>
+    <img src="./../../assets/imgs/undraw_server_down_s4lk.svg" class="content__error-state--image" alt="">
+    <ion-label class='content__error-state--text'> Server Connection is down. </ion-label>
+    <ion-label class='content__error-state--text'> Please try again later </ion-label>
+
+    <button ion-button class="content__error-state--button" (click)="getInvoiceServiceRequests()">
+      Load Invoices
+    </button>
+  </div>
+  <div *ngIf="serviceRequests">
+    <!-- <div class="non_moving_section">
+      <p class="v2_heading" *ngIf=!search>
+        Service Requests
+      </p>
+
+      <div class="main_body" *ngIf=search>
+        <div class="search_module">
+          <ion-searchbar class="search_bar" placeholder="Search" [(ngModel)]="searchQuery" debounce="500" (ionInput)="searchItems()"></ion-searchbar>
+          <div class="filter_container">
+            <div class="filter_module">
+              <p class="filter_label" [ngClass]="{extra_padding:scheduled_selected, extra_padding_2:pending_selected}">{{filter_value}}</p>
+              <img src="assets/img/chevron_down.svg" alt="" (click)="showRadio()">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button ion-button icon-only class='non_moving_section--search_button' (click)='searchButtonTapped()'>
+        <ion-icon name='search' color='darkblue' *ngIf=!search></ion-icon>
+        <ion-icon name='close' color='darkblue' *ngIf=search></ion-icon>
+      </button>
+
+    </div> -->
+    <div class="request_list">
+      <!-- <div *ngFor="let serviceRequest of serviceRequests | filter:generatedStatus:'invoiceGenerated'"> -->
+      <ion-list *ngFor="let serviceRequest of serviceRequests " no-lines>
+        <ion-item class="request_list_item" (click)="invoiceItemCLicked(serviceRequest)">
+          <!-- <img src="assets/img/new.svg" alt="" *ngIf="serviceRequest.invoiceGenerated"> -->
+          <!-- <img src="assets/img/scheduled.svg" alt="" *ngIf="serviceRequest.status=='SCHEDULED'"> -->
+          <img src="assets/img/pending.svg" alt="" *ngIf="!serviceRequest.invoiceGenerated">
+          <!-- <img src="./../../assets/img/done_24_px.png" alt="" *ngIf="serviceRequest.invoiceGenerated"> -->
+          <ion-icon name='checkmark' color='secondary' *ngIf="serviceRequest.invoiceGenerated" item-left></ion-icon>
+          <ion-icon name='ios-arrow-forward' color='greyIcon' item-right></ion-icon>
+          <div class="request_list_item_data">
+            <p class="do_number">{{serviceRequest.doNo}}</p>
+            <p class="date">{{serviceRequest.dateCreated | date:'longDate'}}</p>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+    <ion-infinite-scroll (ionInfinite)="doInfinite( $event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+
+</ion-content>

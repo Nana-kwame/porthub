@@ -1,0 +1,170 @@
+page-break-bulk-module {
+  .main_card {
+    margin-bottom: 0;
+  }
+
+  .aux_card {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .main_view {
+    background-color: #f7f6f6;
+  }
+
+  .scroll-content {
+    background-color: #f8f7fb;
+  }
+
+  .category_select {
+    border: #e0e0e0 solid 1px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 8px;
+    height: 50px;
+
+  }
+
+  .category_select .select-icon {
+    position: absolute;
+    right: 16px;
+  }
+
+  .category_select.item-block .item-inner {
+    border: none;
+  }
+
+  .select {
+    padding: 0;
+    max-width: 90%;
+  }
+
+  // .continue_button ion-grid{
+  //     padding:0;
+  // }
+
+  // // .continue_button{
+  // //     left:0;
+  // //     right:0;
+  // //     margin:0 auto;
+  // //     display: block;
+  // //     // margin-top: 100px;
+  // //     width:90%;
+  // //     position: absolute;
+  // //     bottom:20px;
+  // // }
+  // .continue_button ion-icon{
+  //     font-size: 3rem;
+  //     padding-left:0;
+  //     padding-right: 2rem;
+  // }
+
+  // .continue_button ion-col{
+  // //    padding-right: 2rem;
+  //     padding-left:0;
+
+  // }
+
+  // #button_text{
+  //     text-align: center;
+  //     font-weight: 400;
+  //     padding-top:1.2rem;
+  //     font-size:1.6rem;
+
+
+  // }
+
+  .form_elements {
+    padding-top: 20vh;
+  }
+
+  #faux_header {
+    height: 56px;
+    background-color: white;
+    width: 100%;
+    z-index: 100;
+  }
+
+  #back_button {
+    // text-align: left;
+    // padding: 5px 0 0px 1.7rem;
+    // font-size: 2.5rem;
+    // color: #011f46;
+    // position: absolute;
+  }
+
+  #faux_title {
+    margin: 0;
+    /* display: inline-block; */
+    text-align: center;
+    padding-top: 12px;
+    color: #011f46;
+    font-weight: 600;
+    font-size: 1.6rem;
+
+  }
+
+  ion-input {
+    border: #e0e0e0 1px solid;
+    // margin-bottom:1.5rem;
+    padding: 0rem 1rem 0rem 1.5rem;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 17px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+  }
+
+  .show_item {
+    visibility: visible;
+    position: relative;
+    border-radius: 0 0 3px 3px;
+    border-top: 0;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 0px 5px 0 rgba(0, 0, 0, 0);
+  }
+
+  .remove_border {
+    border-bottom: 0;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 5px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 3px 3px 0px 0px;
+    background-color: #f7f6f6
+  }
+
+  .vehicle_list {
+    margin-top: 60px;
+    padding: 0 5% 0 5%;
+  }
+
+  // .finish_button{
+
+  //     width:100%;
+  //     left:0;
+  //     right:0;
+  //     margin:0rem auto 0rem auto;
+  //     position: absolute;
+  //     bottom:0;
+  //     border-radius: 0;
+  //     height:50px;
+  // }
+
+  .scroll-content {
+    margin-bottom: 0 !important;
+  }
+
+  #cart_button {
+    // color: #011f46;
+  }
+
+  #cart_button ion-badge {
+    transform: translateY(-45px);
+  }
+
+  .button_group {
+    padding: 0 7%;
+  }
+}

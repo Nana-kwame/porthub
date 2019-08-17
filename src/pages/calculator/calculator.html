@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="main_view">
+  <ion-toolbar class='calc-header' color="plain">
+    <p class='calc-header--title'>Calculator</p>
+  </ion-toolbar>
+
+  <div class="loader" *ngIf="loading">
+    <ion-spinner color="primary">
+    </ion-spinner>
+    <br> Initializing...
+  </div>
+  <div class="main_form" *ngIf="!loading">
+    <!-- <ion-icon name="paper" id="paper_icon"></ion-icon> -->
+    <img src='../../assets/img/bill_icon.png' class='main_form--main-image' />
+    <p class='main_form--header'>Calculate your bill</p>
+    <p class='main_form--subheader'>Select a category below to begin! </p>
+
+    <div class="main_form--select_group">
+      <ion-item class="main_form--category_select" (click)='onShowActionSheet()'>
+        <!-- <ion-select [(ngModel)]="selectedCategory" multiple="false" placeholder="Select A Category" [selectOptions]="categorySelectOptions"
+          (ionChange)="goItemsPage()">
+          <ion-option *ngFor="let categoryType of categoryTypes" [value]="categoryType.id">{{categoryType.categoryName}}</ion-option>
+        </ion-select> -->
+
+        <button ion-button clear>
+          <ion-icon  name='code' color='light' class='main_form--category_select--icon'></ion-icon>
+          <p class='main_form--category_select--p'>Select a category</p>
+
+        </button>
+
+      </ion-item>
+    </div>
+
+    <!--<button class="continue_button" ion-button block color="secondary" (click)="goItemsPage( )" icon-right [disabled]="selectedCategory==='false'">
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-90 id="button_text">Continue</ion-col>
+                    <ion-col width-10>
+                        <ion-icon name="arrow-forward"></ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </button>-->
+
+  </div>
+</ion-content>

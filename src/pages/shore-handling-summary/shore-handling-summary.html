@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+
+  <ion-toolbar color='plain' id='faux_header'>
+    <p id="faux_title">Shorehandling Summary</p>
+
+    <ion-buttons left>
+      <button ion-button icon-only (click)="onBackTapped( )">
+        <ion-icon name="arrow-back" id="back_button" *ngIf="!checker"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button icon-only color='plain' class='addBtn' (click)="continueEditing()">
+        <ion-icon name='add-circle' color='blueheader'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class='content'>
+
+  <div *ngIf="builtData.calculable_containers.length <= 0" class="empty_placeholder">
+    No items on the clipboard
+  </div>
+
+  <div class="repeater_body" *ngIf="builtData.calculable_containers.length > 0">
+    <p class="user_entry_labels">Activity Type</p>
+    <ion-item class="category_select" *ngIf="!hide_imex">
+      <ion-select [(ngModel)]="tempData.imex" multiple="false" placeholder="Select An Activity" [selectOptions]="activitySelectOptions"
+        (ionChange)="activitySelected()">
+        <ion-option *ngFor="let activityType of builtData.imex" value="{{activityType.id}}" [selected]="activityType.selected">{{activityType.name}}
+        </ion-option>
+
+      </ion-select>
+    </ion-item>
+    <div *ngFor="let calculable of builtData.calculable_containers; let i=index;" class="entry_body">
+      <p class="entry_body--header">Container Details</p>
+      <div class="entry_body--main">
+        <div *ngFor="let containerType of builtData.calculable_containers[i].size_of_container">
+          <div class="user_entries" *ngIf="containerType.selected">
+            <div class="user_entry_titles"> <b>Type </b>: {{containerType.size}} </div>
+          </div>
+        </div>
+        <div *ngFor="let deliveryMode of builtData.calculable_containers[i].delivery_mode">
+          <div class="user_entries" *ngIf="deliveryMode.selected">
+            <span>
+              <p class="user_entry_titles"> <b>Delivery Mode</b> : {{deliveryMode.mode}}</p>
+            </span>
+          </div>
+        </div>
+        <div>
+          <div class="user_entries">
+            <div class="user_entry_titles"><b>Storage Period</b> : {{calculable.storage_period}}</div>
+          </div>
+        </div>
+        <!-- <div class="entry_delete">
+          <span (click)="openEditModal(calculable)" class="edit_option">Edit</span>
+          <span (click)="deleteEntry(i)" class="delete_option">Delete</span>
+        </div> -->
+        <button ion-button icon-only class='delete_button' color='plain'>
+          <ion-icon name='trash' color='greyIcon'></ion-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class='btn_group'>
+    <button class="continue_button finish_button" ion-button icon-right (click)="generate()" [disabled]="builtData.calculable_containers.length <= 0">Generate</button>
+  </div>
+
+</ion-content>

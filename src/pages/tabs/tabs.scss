@@ -1,0 +1,17 @@
+page-tabs {
+  .keyboard-is-open .tabbar {
+    display: none;
+  }
+
+  .keyboard-is-open scroll-content {
+    margin-bottom: 0 !important;
+  }
+
+   ion-badge {
+    width: 3px !important;
+    height: 14px !important;
+    border-radius: 50% !important;
+    right: 29% !important;
+    border: white 1px solid !important;
+  }
+}

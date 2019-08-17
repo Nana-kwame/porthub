@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+
+  </ion-toolbar>
+
+  <ion-toolbar id='faux_header' color='plain'>
+    <p id='faux_title'>Container</p>
+
+    <ion-buttons left>
+      <button ion-button icon-only color='plain' (click)="onBackTapped( )">
+        <ion-icon name="arrow-back" id="back_button"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button icon-only color='plain' (click)="goToClipboard( )">
+        <ion-icon name="md-clipboard" *ngIf="!checker" id="cart_button">
+          <ion-badge color="blueheader" *ngIf="clipboardCount!=0">{{clipboardCount}}</ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+  <!-- <div id="faux_header">
+    <ion-icon name="arrow-round-back" id="back_button" (click)="onBackTapped( )"></ion-icon>
+    <ion-icon name="clipboard" *ngIf="!checker" id="cart_button" (click)="goToClipboard( )">
+      <ion-badge color="secondary" *ngIf="clipboardCount!=0">{{clipboardCount}}</ion-badge>
+    </ion-icon>
+    <p id="faux_title">Container</p>
+  </div> -->
+  <div class="vehicle_list">
+    <ion-item class="category_select">
+      <ion-select [(ngModel)]="containerData.containerLengthId" multiple="false" placeholder="Select A Container Length"
+        [selectOptions]="selectOptions" (ionChange)="pickContainerName(containerData.containerLengthId)">
+        <ion-option *ngFor="let containerType of containerTypes" value="{{containerType.id}}">{{containerType.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <br /><br />
+
+    <ion-item class="category_select">
+      <ion-select [(ngModel)]="containerData.containerStatusId" multiple="false" placeholder="Select A Status"
+        [selectOptions]="statusSelectOptions" (ionChange)="pickContainerStatusName(containerData.containerStatusId)">
+        <ion-option *ngFor="let containerStatusId of containerStatusIds" value="{{containerStatusId.id}}">{{containerStatusId.container}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <br /><br />
+
+    <ion-input [(ngModel)]="containerData.quantity" type="number" placeholder="Quantity"></ion-input>
+
+  </div>
+  <!-- <button class="continue_button finish_button" ion-button block color="secondary" (click)="goToSummary( )" icon-right
+    [disabled]="!containerData.containerLengthId || !containerData.containerStatusId || !containerData.quantity">
+    Add To Invoice
+        </button> -->
+  <div class="button_group" style="z-index: 100;">
+
+    <button class="continue_button finish_button" ion-button icon-right [disabled]="!containerData.containerLengthId || !containerData.containerStatusId || !containerData.quantity"
+      (click)="goToSummary( )">Add To Invoice</button>
+  </div>
+</ion-content>

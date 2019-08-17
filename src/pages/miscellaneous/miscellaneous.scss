@@ -1,0 +1,276 @@
+page-miscellaneous {
+  .main_view {
+    background-color: #f7f6f6;
+  }
+
+  #faux_header {
+    height: 44px;
+    background-color: white;
+    // position: fixed;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0px 3px 0px #f7f6f6;
+    margin-top: 5%;
+  }
+
+  #back_button {
+    text-align: left;
+    padding: 5px 0 0px 1.7rem;
+    font-size: 2.5rem;
+    color: #011f46;
+    position: absolute;
+  }
+
+  #faux_title {
+    margin: 0;
+    /* display: inline-block; */
+    text-align: center;
+    padding-top: 12px;
+    color: #011f46;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 22px;
+    letter-spacing: -0.09px;
+  }
+
+  .form_contents {
+    margin-top: 47px;
+    padding-top: 13px;
+
+  }
+
+  .multiple_select_entry {
+    width: 30%;
+    height: 40px;
+  }
+
+  .faux_radio_button .check_selector #check_mark_box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    margin: 15px 23.5px;
+    position: absolute;
+    border: #e0e0e0 1px solid;
+  }
+
+  .faux_radio_button {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 8px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+    z-index: 100;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .faux_radio_button .service_information p {
+    position: absolute;
+    left: 81px;
+    top: 0;
+
+  }
+
+  .faux_radio_button .service_information p:first-child {
+
+    text-align: left;
+    line-height: 22px;
+    margin: 0;
+    padding-top: 9px;
+  }
+
+  .faux_radio_button .service_information_check {
+    font-size: 16px !important;
+    color: #011f46;
+    text-align: left;
+    line-height: 14px;
+    position: absolute;
+    left: 50px;
+    top: 18px;
+    margin: 0;
+    text-transform: capitalize;
+    overflow-wrap: normal;
+    font-weight: 600;
+  }
+
+  .faux_radio_button .selected_amount {
+    font-size: 10px;
+    color: #000;
+    text-align: right;
+    line-height: 14px;
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    font-size: 15px;
+    width: 100%;
+    margin: 0;
+    text-transform: capitalize;
+  }
+
+  .faux_radio_button .service_information p:last-child {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(5, 28, 61, 1);
+    text-align: left;
+    line-height: 22px;
+    margin: 0;
+  }
+
+  .faux_radio_button .radio_selector {
+    display: inline-block;
+    width: 80px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+  }
+
+  faux_radio_button .check_selector {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+  }
+
+  .faux_radio_button .radio_selector #outer_circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin: 19px 23.5px;
+    position: absolute;
+    border: #e0e0e0 1px solid;
+    transition: border 200ms ease;
+  }
+
+  .faux_radio_button .check_selector #check_mark {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 3px 4px;
+    position: absolute;
+    opacity: 0;
+    color: white;
+    bottom: 5px;
+
+  }
+
+  .select_radio {
+    border: 7px solid rgba(109, 194, 233, 1) !important;
+  }
+
+  .select_check {
+    opacity: 1 !important;
+  }
+
+  .check_box_block {
+    position: relative;
+  }
+
+  .show_engine_params {
+    margin-top: -8px !important;
+    visibility: visible !important;
+    margin-bottom: 15px !important;
+  }
+
+  .payment_method_param {
+    padding: 12px 20px 20px 47px;
+    background-color: rgba(247, 247, 247, 1);
+    height: 50px;
+    margin-top: -50px;
+    transition: margin 300ms ease;
+    visibility: hidden;
+    background: #fff;
+    width: 84%;
+    margin-left: 8%;
+    /* transform: translateY(-60px);  */
+  }
+
+  .payment_method_param input {
+    width: 100%;
+    border: none;
+  }
+
+  .loader {
+    text-align: center;
+    padding-top: 40vh;
+    color: #124676;
+  }
+
+  .scroll-content {
+    margin-bottom: 0 !important;
+  }
+
+  // .finish_button {
+  //   width: 100%;
+  //   left: 0;
+  //   right: 0;
+  //   margin: 0rem auto 0rem auto;
+  //   position: absolute;
+  //   bottom: 0;
+  //   border-radius: 0;
+  //   height: 50px;
+  // }
+  // .continue_button ion-grid {
+  //   padding: 0;
+  // }
+  // .continue_button ion-icon {
+  //   font-size: 3rem;
+  //   padding-left: 0;
+  //   padding-right: 2rem;
+  // }
+  // .continue_button ion-col {
+  //   //    padding-right: 2rem;
+  //   padding-left: 0;
+  // }
+  // #button_text {
+  //   text-align: center;
+  //   font-weight: 400;
+  //   padding-top: 1.2rem;
+  //   font-size: 1.6rem;
+  // }
+  #cart_button {
+    //   text-align: right;
+    padding: 5px 0 0px 1.7rem;
+    font-size: 3rem;
+    color: #011f46;
+    position: absolute;
+    right: 1.7rem;
+    top: 0;
+  }
+
+  #cart_button ion-badge {
+    //   text-align: right;
+    border-radius: 50%;
+    margin-top: -22px; //   margin-left:10px;
+    font-size: 1rem;
+    color: #fff;
+    position: absolute;
+    right: -10px;
+    height: 20px;
+    width: 20px;
+    padding: 5px 3px; //   background: transparent;
+  }
+
+  .check_box_clicked {
+    background-color: #0d92ff;
+
+  }
+
+  .finish_button {
+    position: relative;
+    width: 328px;
+    left: 0;
+    right: 0;
+    margin-top: 100px;
+    margin-left: 16px;
+    bottom: 16px;
+    border-radius: 0;
+    height: 50px;
+    background-color: #0d92ff;
+    height: 48px;
+    border-radius: 8px;
+    text-transform: none;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+
+  </ion-toolbar>
+
+
+  <ion-toolbar color='plain' id='faux_header'>
+    <p id='faux_title'> Port Dues and Stevedore</p>
+
+    <ion-buttons left>
+      <button ion-button icon-only color='plain' (click)="onBackTapped()">
+        <ion-icon name="arrow-back" color='darkblue'></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button icon-only color='plain' (click)="goToClipboard( )">
+        <ion-icon name="md-clipboard" id="cart_button">
+          <ion-badge color="blueheader" *ngIf="clipboardCount!=0">{{clipboardCount}}</ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+
+</ion-header>
+
+
+<ion-content class="main_view">
+  <!--<div id="faux_header">
+    <ion-icon name="arrow-round-back" *ngIf="!checker" id="back_button" (click)="onBackTapped( )"></ion-icon>
+    <ion-icon name="clipboard" id="cart_button" (click)="goToClipboard( )">
+      <ion-badge color="secondary" *ngIf="clipboardCount!=0">{{clipboardCount}}</ion-badge>
+    </ion-icon>
+    <p id="faux_title">Port Dues and Stevedore</p>
+  </div>-->
+  <!-- <div id="faux_header">
+
+    <p id="faux_title">Port Dues and Stevedore</p>
+  </div> -->
+  <div class="form_elements">
+    <ion-item class="category_select" *ngIf="!checker">
+      <ion-select [(ngModel)]="selectedActivity" multiple="false" placeholder="Select An Activity" [selectOptions]="activitySelectOptions"
+        (ionChange)="checks( )" cancelText='CLOSE'>
+        <ion-option *ngFor="let activityType of activityTypes" value="{{activityType.id}}">{{activityType.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <br /><br />
+    <ion-item class="category_select">
+      <ion-select [(ngModel)]="selectedCargoType" multiple="false" placeholder="Select A Cargo Type" [selectOptions]="cargoSelectOptions"
+        (ionChange)="goToCargoType( )" [disabled]="!selectedActivity || selectedActivity==='{}'">
+        <div *ngFor="let cargoType of cargoTypes">
+          <ion-option *ngIf="cargoType.show" value="{{cargoType.id}}">{{cargoType.cargoTypeName}}</ion-option>
+        </div>
+
+      </ion-select>
+    </ion-item>
+  </div>
+
+</ion-content>

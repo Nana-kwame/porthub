@@ -1,0 +1,51 @@
+page-agent-registration {
+.area{
+    background-color: #f6f7f7;
+}
+
+.toolbar-background{
+    background-color: #124676;
+}
+
+.ar_form_body p{
+    text-align: center;
+    color:#adaeaf;
+    font-size: 1.8rem;
+    margin-top:0;
+    padding-right:5%;
+    padding-left:5%;
+}
+
+.ar_form_body h4{
+    text-align: center;
+    // padding-bottom:1rem;
+    color:#124676;
+    margin-bottom: 0.7rem;
+    padding-right:10%;
+    padding-left:10%;
+}
+
+.ar_form_body{
+    width: 90%;
+    left: 0;
+    right: 0;
+   padding-top: 2rem;
+    margin:0 auto;
+}
+
+.ar_form_body ion-input{
+    border:#e0e0e0 1px solid;
+    margin-bottom:1.8rem;
+    padding:0.5rem 1rem 0.5rem 1rem;
+    border-radius:8px;
+}
+
+.ar_form_body button{
+    margin-top:3rem;
+    font-weight: 400;
+    width:75%;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+}

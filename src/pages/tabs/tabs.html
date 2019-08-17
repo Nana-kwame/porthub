@@ -1,0 +1,8 @@
+<ion-tabs id="TabBarOpen" >
+  <ion-tab [root]="tab1Root" tabsHighlight="true"  tabIcon="md-flame" tabTitle='News'></ion-tab>
+  <ion-tab [root]="tab2Root"  tabIcon="md-apps" tabTitle='Calculator'> </ion-tab>
+  <ion-tab [root]="tab3Root"  tabIcon="md-list" (ionSelect)="onTabTapped()" *ngIf="show_hidden" tabTitle='Requests'></ion-tab>
+  <ion-tab [root]="tab4Root"  tabIcon="md-boat" (ionSelect)="onTabTapped()"*ngIf="show_hidden" tabTitle='Tracker'></ion-tab>
+  <ion-tab [root]='tab5Root' tabIcon='md-contact' (ionSelect)="onTabTapped()" *ngIf="show_hidden" tabTitle='Profile' [tabBadge]= "notificationAlert ? badgeValue: null" class='tabsIcon'></ion-tab>
+  <!-- <ion-tab [root]="tab5Root" tabIcon="custom-bell-icon" (ionSelect)="onTabTapped()"></ion-tab> -->
+</ion-tabs>

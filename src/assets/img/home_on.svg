@@ -1,0 +1,35 @@
+<<<<<<< HEAD
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.42 86.42">
+	<defs>
+		<style>
+			.cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:10px;}.cls-2{fill:#fff;}
+		</style>
+	</defs>
+	<title>
+		Asset 7
+	</title>
+	<g id="Layer_2" data-name="Layer 2">
+		<g id="Layer_1-2" data-name="Layer 1">
+			<circle class="cls-1" cx="43.21" cy="43.21" r="38.21" />
+			<path class="cls-2" d="M62.73,60.83,51.77,34a1.37,1.37,0,0,0-.78-.77L25.41,23.81a1.35,1.35,0,0,0-1.75,1.7l8.85,26.17a1.35,1.35,0,0,0,.82.83L61,62.61A1.36,1.36,0,0,0,62.73,60.83Zm-19.53-13a4.58,4.58,0,1,1,4.58-4.58A4.56,4.56,0,0,1,43.2,47.78Z" />
+		</g>
+	</g>
+</svg>
+=======
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.42 86.42">
+	<defs>
+		<style>
+			.cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:10px;}.cls-2{fill:#fff;}
+		</style>
+	</defs>
+	<title>
+		Asset 7
+	</title>
+	<g id="Layer_2" data-name="Layer 2">
+		<g id="Layer_1-2" data-name="Layer 1">
+			<circle class="cls-1" cx="43.21" cy="43.21" r="38.21" />
+			<path class="cls-2" d="M62.73,60.83,51.77,34a1.37,1.37,0,0,0-.78-.77L25.41,23.81a1.35,1.35,0,0,0-1.75,1.7l8.85,26.17a1.35,1.35,0,0,0,.82.83L61,62.61A1.36,1.36,0,0,0,62.73,60.83Zm-19.53-13a4.58,4.58,0,1,1,4.58-4.58A4.56,4.56,0,0,1,43.2,47.78Z" />
+		</g>
+	</g>
+</svg>
+>>>>>>> master

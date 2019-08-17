@@ -1,0 +1,277 @@
+page-new-comer-login {
+
+  .item-ios.item-label-stacked .text-input, .item-ios.item-label-floating .text-input {
+    margin-left: 5%;
+  }
+
+  font-family: 'IBM Plex Sans', sans-serif;
+  $label-md-text-color-focused: #011f46;
+
+
+  .item-md.item-block .item-inner {
+    border: 1px solid #dedede;
+    border-radius: 7px;
+    padding-top: -5px;
+  }
+
+  .item-label-floating .text-input-md {
+    margin-left: 11px;
+    font-weight: bold;
+  }
+
+  .ion-page.show-page {
+    height: 100% !important;
+    position: absolute !important;
+  }
+
+  .login-text {
+    transform: translateY(37%);
+  }
+
+  .otp_text {
+    transform: translateY(76%);
+  }
+
+  .main_body {
+    background-color: #fff !important;
+    text-align: center;
+  }
+
+  // For certain android phones
+
+
+  .compass {
+    margin-top: 10%;
+    margin-bottom: 1%;
+    height: 7vh;
+    display: block;
+    transform: translate(80%, -120%);
+  }
+
+  .back--button {
+    margin-top: 10%;
+    margin-bottom: 1%;
+    height: 5vh;
+    display: block !important;
+    transform: translate(40%, -177%) scale(.8);
+  }
+
+  .wtp {
+    text-align: center;
+    color: #011f46;
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: 1.5px;
+    transform: translate(-25%, 50%);
+  }
+
+  .login_desc {
+    text-align: center;
+    color: #a4afbd;
+    font-size: 16px;
+    transform: translateX(-10%);
+
+    &--secret-pin_text {
+      font-size: 28px;
+      line-height: 32px;
+      color: #011f46;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  .full_login_input {
+    position: relative;
+  }
+
+  .login-input {
+    color: #011f46;
+    width: 326px;
+    border-radius: 8px;
+    transform: scaleY(.875) translateX(2.5%);
+    // font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+
+    &--text {
+      color: #011f46;
+      font-size: 16px;
+      position: relative;
+      left: 3.5%;
+    }
+
+    &--continue-btn {
+      transform: translateY(24%);
+      width: 328px;
+      height: 48px;
+      border-radius: 8px;
+      text-transform: capitalize;
+      background-color: #0d92ff;
+      box-shadow: none;
+      display: inline-block;
+      text-align: center;
+
+    }
+
+  }
+
+  .look_up_button {
+    width: 30px;
+    transform: rotate(180deg);
+    position: absolute;
+    right: 13%;
+    top: 12px;
+  }
+
+  .separator {
+    width: 80%;
+    display: block;
+    margin: 30px auto 20px auto;
+  }
+
+  .go_to_porthub_button {
+    width: 50%;
+    display: block;
+    margin: 26px auto;
+    background: rgba(0, 0, 0, 0);
+    border: 0.5px solid #94E5D4;
+    padding: 16px 25px;
+    border-radius: 30px;
+    color: #02c39a;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  .go_to_porthub_label {
+    width: 147px;
+    height: 31px;
+    transform: translate(60%, 50%);
+    border-radius: 8px;
+    border: none;
+    box-shadow: unset;
+    font-size: 11.5px;
+    color: #a4afbd;
+    letter-spacing: .3px;
+    text-align: center;
+    // transform: translateX(58%);
+
+    &--arrow {
+      // transform: translateY(33%) scale(.75);
+      font-size: 2.5rem;
+      transform: translateX(75%)
+    }
+  }
+
+  .go_to_porthub_button:active {
+    background: #94E5D4 !important;
+    border: 0.5px solid #f7f6f6 !important;
+    color: #f7f6f6 !important;
+  }
+
+  .pin_code {
+    padding-left: 5%;
+    padding-right: 10%;
+    width: 108%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center
+  }
+
+  .dim {
+    height: 10%;
+    width: 14%;
+  }
+
+
+  .pin_box {
+    margin: 0;
+    height: 50px;
+    text-align: center;
+    font-size: 18px;
+    background: white;
+    border: solid 1px #e0e4e8;
+    border-radius: 6.3px;
+    width: 100% !important;
+    height: 44px;
+  }
+
+
+  .pin_box:focus {
+    border: 1px #0d92ff solid;
+    box-shadow: 0px 3px 6px #C4C4C4;
+    transform: scale(1.09);
+    caret-color: #0d92ff;
+  }
+
+  .blue-background {
+    background-color: #0d92ff;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 370px) {
+    .item-label-floating .text-input-md {
+      margin-left: 11px;
+      font-weight: 500;
+    }
+
+    .wtp {
+      font-weight: 500;
+    }
+
+    .login_desc {
+      &--secret-pin_text {
+        font-weight: 500;
+
+      }
+    }
+
+
+    .login-input {
+      font-weight: 400 !important;
+    }
+
+    .look_up_button {
+      width: 25px;
+      transform: rotate(180deg);
+      position: absolute;
+      right: 13%;
+      top: 9px;
+    }
+
+    .go_to_porthub_button {
+      font-size: 11px !important;
+      padding: 15px 20px !important;
+      margin: 26px auto 0 auto !important;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .go_to_porthub_label {
+      transform: translate(100%, 213%);
+    }
+    .compass {
+      transform: translate(9%, -18%) scale(0.5);
+      margin: unset !important;
+      height: unset !important;
+    }
+
+    .wtp {
+      transform: translate(-37%, -80%);
+    }
+
+    .login_desc {
+      transform: translate(-29%, -290%)
+    }
+
+    .login-input {
+      width: 80vw !important;
+      transform: scaleY(0.875) translate(2.5%, -90%);
+
+      &--continue-btn {
+        transform: translateY(-90%)
+      }
+    }
+  }
+}

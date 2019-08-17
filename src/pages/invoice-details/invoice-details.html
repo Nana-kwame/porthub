@@ -1,0 +1,241 @@
+<ion-header>
+  <ion-toolbar>
+
+  </ion-toolbar>
+
+  <ion-toolbar class='nav_header' color='plain'>
+    <p class="v2_heading">
+      Request details
+    </p>
+
+    <ion-buttons left>
+      <button ion-button icon-only (click)='onBackTapped()'>
+        <ion-icon name="arrow-back" color=darkblue (click)="onBackTapped()"></ion-icon>
+
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+
+  <div class="main_content">
+    <div class="data_body">
+      <h3 class='data_body--header'>DETAILS</h3>
+
+      <ion-item no-lines>
+        <ion-icon name='list-box' item-left color='greyIcon'></ion-icon>
+        <p class="data_body--label">Delivery Order Number</p>
+        <p class="data_value  do_number">{{parsedRequest.doNo}}</p>
+      </ion-item>
+
+      <ion-item no-lines>
+        <ion-icon name='calendar' item-left color='greyIcon'></ion-icon>
+        <p class="data_body--label">Date Cpreated</p>
+        <p class="data_value">{{parsedRequest.dateCreated | date:'longDate'}}</p>
+      </ion-item>
+
+
+      <p class="data_label">INVOICES</p>
+      <div class="input_container">
+        <input type="text" placeholder="Username" class="login_input" [(ngModel)]="selected_invoice.id" readonly=true; (click)="dropdownTapped()"  />
+        <img src="assets/img/Drop-Down-01.svg" alt="" (click)="dropdownTapped()" [ngClass]="{invert_drop_down:invert_drop_down}"
+          *ngIf="invoiceData">
+        <div class="invoice_loader" *ngIf="!invoiceData">
+          <ion-spinner color="primary">
+          </ion-spinner>
+        </div>
+      </div>
+      <div class="drop_down_data" [ngClass]="{show_drop_down:show_drop_down}">
+        <div class="drop_down_data_item" (click)="selectOption(invoice, i)" *ngFor=" let invoice of invoiceData; let i = index">{{invoice.id}}
+          <img src="assets/img/Check-01.svg" alt="" [ngClass]="{show_check:invoice.selected && show_drop_down}">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="activity_segments" *ngIf="selected_invoice.selected">
+    <button [ngClass]="{selected_segment:invoiceSelected}" (click)="selectSectionItem('invoice')" class='activity_segments-buttons'>Invoice</button>
+    <button [ngClass]="{selected_segment:paymentSelected}" (click)="selectSectionItem('payment')" class='activity_segments-buttons'>Payment</button>
+    <button [ngClass]="{selected_segment:scheduleSelected}" (click)="selectSectionItem('schedule')" class='activity_segments-buttons'>Schedule</button>
+  </div>
+  <div class='activity_segments--inner' *ngIf="selected_invoice.selected">
+    <!-- Invoice Section -->
+    <div *ngIf="invoiceSelected">
+      <div class="invoice_section">
+        <p class="invoice_section--data_label">Invoice #</p>
+        <p class="invoice_section--data_value ">{{selected_invoice.id}}</p>
+        <div class="table_headings">
+          <span class="items">Item</span>
+          <span class="qty">qty</span>
+          <span class="unit_rate"> rate</span>
+          <span class="total">total</span>
+        </div>
+        <div class="breakdown_table">
+          <div class="table_rows" *ngFor="let detail of selected_invoice.details.ChargeItem;">
+            <span class="items_data">{{detail.Description}}</span>
+            <span class="qty_data">{{detail.Quantity}}</span>
+            <span class="unit_rate_data">{{parseData(detail.Subtotal)}}</span>
+            <span class="total_data">{{parseData(detail.Subtotal * detail.Quantity)}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="break_down_list">
+        <div class="break_down_list_item">
+          <span class="break_down_list_item_label">subtotal</span>
+          <span class="break_down_list_item_data">GHS {{parseData(selected_invoice.totalAmount * 0.85100638) }}</span>
+        </div>
+
+        <div class="break_down_list_item">
+          <span class="break_down_list_item_label">VAT Total(17.5%)</span>
+          <span class="break_down_list_item_data">GHS {{parseData(selected_invoice.totalAmount * 0.1489361702)}}</span>
+        </div>
+        <div class="break_down_list_item">
+          <span class="break_down_list_item_label">Grand Total</span>
+          <span class="break_down_list_item_data">GHS {{parseData(selected_invoice.totalAmount)}}</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Payment Section -->
+    <div *ngIf="paymentSelected" class="payment_section">
+      <p class="payment_section--data_label">Invoice #</p>
+      <p class="payment_section--data_value">{{selected_invoice.id}}</p>
+      <div class="separator"></div>
+      <p class="payment_section--data_label">Date Completed</p>
+      <p class="payment_section--data_value">{{selected_invoice.paymentSummary.dateCreated}}</p>
+      <div class="separator"></div>
+      <p class="payment_section--data_label">Amount Paid</p>
+      <p class="payment_section--data_value">{{parseData(selected_invoice.paymentSummary.amount) }}</p>
+      <div class="separator"></div>
+      <p class="payment_section--data_label">Payer Name</p>
+      <p class="payment_section--data_value">{{selected_invoice.paymentSummary.payer}}</p>
+      <div class="separator"></div>
+      <p class="payment_section--data_label">Payer Contact</p>
+      <p class="payment_section--data_value">{{selected_invoice.paymentSummary.payerContact}}</p>
+    </div>
+
+
+    <!-- Schedule Section -->
+    <div *ngIf="scheduleSelected" class="schedule_section">
+      <div class="loader" *ngIf="loadingSchedule">
+        <ion-spinner color="primary">
+        </ion-spinner>
+      </div>
+
+      <div *ngIf='!loadingSchedule && scheduleData.length === 0'>
+        <div class='no-container'>
+            <svg id="f20e0c25-d928-42cc-98d1-13cc230663ea" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" width="820.16" height="780.81" viewBox="0 0 820.16 780.81">
+          <defs>
+            <linearGradient id="07332201-7176-49c2-9908-6dc4a39c4716" x1="539.63" y1="734.6" x2="539.63" y2="151.19"
+              gradientTransform="translate(-3.62 1.57)" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="gray" stop-opacity="0.25" />
+              <stop offset="0.54" stop-color="gray" stop-opacity="0.12" />
+              <stop offset="1" stop-color="gray" stop-opacity="0.1" />
+            </linearGradient>
+            <linearGradient id="0ee1ab3f-7ba2-4205-9d4a-9606ad702253" x1="540.17" y1="180.2" x2="540.17" y2="130.75"
+              gradientTransform="translate(-63.92 7.85)" xlink:href="#07332201-7176-49c2-9908-6dc4a39c4716" />
+            <linearGradient id="abca9755-bed1-4a97-b027-7f02ee3ffa09" x1="540.17" y1="140.86" x2="540.17" y2="82.43"
+              gradientTransform="translate(-84.51 124.6) rotate(-12.11)" xlink:href="#07332201-7176-49c2-9908-6dc4a39c4716" />
+            <linearGradient id="2632d424-e666-4ee4-9508-a494957e14ab" x1="476.4" y1="710.53" x2="476.4" y2="127.12"
+              gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#07332201-7176-49c2-9908-6dc4a39c4716" />
+            <linearGradient id="97571ef7-1c83-4e06-b701-c2e47e77dca3" x1="476.94" y1="156.13" x2="476.94" y2="106.68"
+              gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#07332201-7176-49c2-9908-6dc4a39c4716" />
+            <linearGradient id="7d32e13e-a0c7-49c4-af0e-066a2f8cb76e" x1="666.86" y1="176.39" x2="666.86" y2="117.95"
+              gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#07332201-7176-49c2-9908-6dc4a39c4716" />
+          </defs>
+          <title>no data</title>
+          <rect x="317.5" y="142.55" width="437.02" height="603.82" transform="translate(-271.22 62.72) rotate(-12.11)"
+            fill="#e0e0e0" />
+          <g opacity="0.5">
+            <rect x="324.89" y="152.76" width="422.25" height="583.41" transform="translate(-271.22 62.72) rotate(-12.11)"
+              fill="url(#07332201-7176-49c2-9908-6dc4a39c4716)" />
+          </g>
+          <rect x="329.81" y="157.1" width="411.5" height="570.52" transform="translate(-270.79 62.58) rotate(-12.11)"
+            fill="#fafafa" />
+          <rect x="374.18" y="138.6" width="204.14" height="49.45" transform="translate(-213.58 43.93) rotate(-12.11)"
+            fill="url(#0ee1ab3f-7ba2-4205-9d4a-9606ad702253)" />
+          <path d="M460.93,91.9c-15.41,3.31-25.16,18.78-21.77,34.55s18.62,25.89,34,22.58,25.16-18.78,21.77-34.55S476.34,88.59,460.93,91.9ZM470.6,137A16.86,16.86,0,1,1,483.16,117,16.66,16.66,0,0,1,470.6,137Z"
+            transform="translate(-189.92 -59.59)" fill="url(#abca9755-bed1-4a97-b027-7f02ee3ffa09)" />
+          <rect x="375.66" y="136.55" width="199.84" height="47.27" transform="translate(-212.94 43.72) rotate(-12.11)"
+            fill="#0d92ff" />
+          <path d="M460.93,91.9a27.93,27.93,0,1,0,33.17,21.45A27.93,27.93,0,0,0,460.93,91.9ZM470.17,135a16.12,16.12,0,1,1,12.38-19.14A16.12,16.12,0,0,1,470.17,135Z"
+            transform="translate(-189.92 -59.59)" fill="#0d92ff" />
+          <rect x="257.89" y="116.91" width="437.02" height="603.82" fill="#e0e0e0" />
+          <g opacity="0.5">
+            <rect x="265.28" y="127.12" width="422.25" height="583.41" fill="url(#2632d424-e666-4ee4-9508-a494957e14ab)" />
+          </g>
+          <rect x="270.65" y="131.42" width="411.5" height="570.52" fill="#fff" />
+          <rect x="374.87" y="106.68" width="204.14" height="49.45" fill="url(#97571ef7-1c83-4e06-b701-c2e47e77dca3)" />
+          <path d="M666.86,118c-15.76,0-28.54,13.08-28.54,29.22s12.78,29.22,28.54,29.22,28.54-13.08,28.54-29.22S682.62,118,666.86,118Zm0,46.08a16.86,16.86,0,1,1,16.46-16.86A16.66,16.66,0,0,1,666.86,164Z"
+            transform="translate(-189.92 -59.59)" fill="url(#7d32e13e-a0c7-49c4-af0e-066a2f8cb76e)" />
+          <rect x="377.02" y="104.56" width="199.84" height="47.27" fill="#0d92ff" />
+          <path d="M666.86,118a27.93,27.93,0,1,0,27.93,27.93A27.93,27.93,0,0,0,666.86,118Zm0,44.05A16.12,16.12,0,1,1,683,145.89,16.12,16.12,0,0,1,666.86,162Z"
+            transform="translate(-189.92 -59.59)" fill="#0d92ff" />
+          <g opacity="0.5">
+            <rect x="15.27" y="737.05" width="3.76" height="21.33" fill="#47e6b1" />
+            <rect x="205.19" y="796.65" width="3.76" height="21.33" transform="translate(824.47 540.65) rotate(90)"
+              fill="#47e6b1" />
+          </g>
+          <g opacity="0.5">
+            <rect x="451.49" width="3.76" height="21.33" fill="#47e6b1" />
+            <rect x="641.4" y="59.59" width="3.76" height="21.33" transform="translate(523.63 -632.62) rotate(90)" fill="#47e6b1" />
+          </g>
+          <path d="M961,832.15a4.61,4.61,0,0,1-2.57-5.57,2.22,2.22,0,0,0,.1-.51h0a2.31,2.31,0,0,0-4.15-1.53h0a2.22,2.22,0,0,0-.26.45,4.61,4.61,0,0,1-5.57,2.57,2.22,2.22,0,0,0-.51-.1h0a2.31,2.31,0,0,0-1.53,4.15h0a2.22,2.22,0,0,0,.45.26,4.61,4.61,0,0,1,2.57,5.57,2.22,2.22,0,0,0-.1.51h0a2.31,2.31,0,0,0,4.15,1.53h0a2.22,2.22,0,0,0,.26-.45,4.61,4.61,0,0,1,5.57-2.57,2.22,2.22,0,0,0,.51.1h0a2.31,2.31,0,0,0,1.53-4.15h0A2.22,2.22,0,0,0,961,832.15Z"
+            transform="translate(-189.92 -59.59)" fill="#4d8af0" opacity="0.5" />
+          <path d="M326.59,627.09a4.61,4.61,0,0,1-2.57-5.57,2.22,2.22,0,0,0,.1-.51h0a2.31,2.31,0,0,0-4.15-1.53h0a2.22,2.22,0,0,0-.26.45,4.61,4.61,0,0,1-5.57,2.57,2.22,2.22,0,0,0-.51-.1h0a2.31,2.31,0,0,0-1.53,4.15h0a2.22,2.22,0,0,0,.45.26,4.61,4.61,0,0,1,2.57,5.57,2.22,2.22,0,0,0-.1.51h0a2.31,2.31,0,0,0,4.15,1.53h0a2.22,2.22,0,0,0,.26-.45A4.61,4.61,0,0,1,325,631.4a2.22,2.22,0,0,0,.51.1h0a2.31,2.31,0,0,0,1.53-4.15h0A2.22,2.22,0,0,0,326.59,627.09Z"
+            transform="translate(-189.92 -59.59)" fill="#fdd835" opacity="0.5" />
+          <path d="M855,127.77a4.61,4.61,0,0,1-2.57-5.57,2.22,2.22,0,0,0,.1-.51h0a2.31,2.31,0,0,0-4.15-1.53h0a2.22,2.22,0,0,0-.26.45,4.61,4.61,0,0,1-5.57,2.57,2.22,2.22,0,0,0-.51-.1h0a2.31,2.31,0,0,0-1.53,4.15h0a2.22,2.22,0,0,0,.45.26,4.61,4.61,0,0,1,2.57,5.57,2.22,2.22,0,0,0-.1.51h0a2.31,2.31,0,0,0,4.15,1.53h0a2.22,2.22,0,0,0,.26-.45,4.61,4.61,0,0,1,5.57-2.57,2.22,2.22,0,0,0,.51.1h0a2.31,2.31,0,0,0,1.53-4.15h0A2.22,2.22,0,0,0,855,127.77Z"
+            transform="translate(-189.92 -59.59)" fill="#fdd835" opacity="0.5" />
+          <circle cx="812.64" cy="314.47" r="7.53" fill="#f55f44" opacity="0.5" />
+          <circle cx="230.73" cy="746.65" r="7.53" fill="#f55f44" opacity="0.5" />
+          <circle cx="735.31" cy="477.23" r="7.53" fill="#f55f44" opacity="0.5" />
+          <circle cx="87.14" cy="96.35" r="7.53" fill="#4d8af0" opacity="0.5" />
+          <circle cx="7.53" cy="301.76" r="7.53" fill="#47e6b1" opacity="0.5" />
+        </svg>
+        </div>
+
+        <!-- <ion-icon name="sad" color='green_2' class='no-container'></ion-icon> -->
+
+      </div>
+      <div *ngIf="!loadingSchedule && scheduleData.length !== 0">
+        <h3 class="schedule_section--header">DETAILS</h3>
+        <div class='schedule_section--container'>
+          <p class="schedule_section--data_label">Container Number</p>
+          <div class="schedule_section--input_container">
+            <input type="text" class="schedule_section--login_input" [(ngModel)]="selected_container.containerNumber"
+              readonly=true; />
+            <img src="assets/img/Drop-Down-01.svg" class='schedule_section--arrow' alt="" (click)="containerDropdownTapped()"
+              [ngClass]="{invert_drop_down:invert_container_drop_down}">
+          </div>
+        </div>
+        <div class="drop_down_data" [ngClass]="{show_drop_down:show_container_drop_down}">
+          <div class="drop_down_data_item" (click)="selectContainerOption(container, i)" *ngFor=" let container of scheduleData; let i = index">{{container.containerNumber}}
+            <img src="assets/img/Check-01.svg" alt="" [ngClass]="{show_check:container.selected && show_container_drop_down}">
+          </div>
+        </div>
+        <div *ngIf="selected_container.selected">
+          <p class="schedule_section--data_label" style="margin-top:20px">Scheduled Date</p>
+          <p class="schedule_section--data_value">{{selected_container.scheduledDate}}</p>
+          <div class="separator"></div>
+          <!-- <p class="data_label">Container Number</p>
+            <p class="data_value">{{selected_container.containerNumber}}</p>
+            <div class="separator"></div> -->
+          <p class="schedule_section--data_label">Container Position</p>
+          <p class="schedule_section--data_value">{{selected_container.containerPosition}}</p>
+          <div class="separator"></div>
+          <p class="schedule_section--data_label">Type</p>
+          <p class="schedule_section--data_value">{{selected_container.type}}</p>
+          <div class="separator"></div>
+          <p class="schedule_section--data_label">Size</p>
+          <p class="schedule_section--data_value">{{selected_container.size}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</ion-content>

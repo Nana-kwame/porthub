@@ -1,0 +1,391 @@
+page-stevedor-and-port-dues-result {
+  .area {
+    background-color: #f8f9fb;
+  }
+
+
+
+  #initial_block ion-icon {
+    text-align: center;
+    display: block;
+    font-size: 5rem;
+    color: #fff;
+  }
+
+  #initial_block {
+    height: 18rem !important;
+    background-color: #124676;
+    padding: 8vh 20% 0px 20% !important;
+  }
+
+  #initial_block button {
+    margin-top: 2rem;
+  }
+
+  .section_bar ion-col {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+  }
+
+  .section_bar ion-grid {
+    text-align: center;
+    padding: 0;
+    height: 5rem;
+  }
+
+  .segment-button.segment-activated {
+    background-color: #fff !important;
+    color: #124676 !important;
+  }
+
+  ion-segment {
+    background-color: #fff !important;
+    height: 44px !important;
+  }
+
+  .segment-button {
+    background-color: #124676 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    height: 44px !important;
+    padding-top: 0.8rem;
+    color: #fff !important;
+    opacity: 1 !important;
+  }
+
+  // .section_selected{
+  // }
+  .invoice_lists {
+    position: relative;
+    margin-top: 16px;
+
+    &--header {
+      font-size: 12px;
+      letter-spacing: .5px;
+      color: #0d92ff;
+      font-weight: 600;
+      margin-left: 16px;
+    }
+  }
+
+  #grey_title_1 {
+    color: #cfd8e1;
+    padding: 0;
+  }
+
+  #grey_title_2 {
+    color: #cfd8e1;
+    text-align: right;
+    padding: 0;
+  }
+
+  .card-content {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+  }
+
+  #voyage_number {
+    color: #124676;
+    font-weight: 500;
+    padding: 0.5rem 0 0 0;
+  }
+
+  #amount {
+    color: #124676;
+    text-align: right;
+    font-weight: 500;
+    padding: 0.5rem 0 0 0;
+  }
+
+  #status {
+    color: #92c73f;
+    font-size: 0.9rem;
+    padding: 0.5rem 0 0 0;
+  }
+
+  #pay button {
+    width: 40%;
+    height: 1.8rem;
+    font-size: 1rem;
+    color: #fff;
+    padding: 0.5rem;
+  }
+
+  #pay {
+    padding: 0;
+    padding-top: 0.6rem;
+  }
+
+  #view_invoice {
+    padding: 0;
+    padding-top: 1.7rem;
+    text-decoration: underline;
+    color: #124676;
+    font-size: 1rem;
+  }
+
+  #view_details {
+    padding: 0;
+    padding-top: 3.4rem;
+    text-decoration: underline;
+    color: #124676;
+    font-size: 1rem;
+  }
+
+  #review_status {
+    padding: 0;
+    padding-top: 2.3rem;
+  }
+
+  #review_status button {
+    width: 40%;
+    height: 1.8rem;
+    font-size: 1rem;
+    color: #fff;
+    padding: 0.5rem;
+  }
+
+  .invoice_data {
+    // height:49vh;
+    // overflow-y: scroll;
+    background: transparent; // padding-top: 164px;
+    padding-bottom: 50px;
+  }
+
+  .invoice_data button {
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0rem auto 0rem auto;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0;
+    height: 50px;
+  }
+
+
+
+  ion-grid {
+    height: 40px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .loader {
+    text-align: center;
+    padding-top: 40vh;
+    color: #124676;
+  }
+
+  #faux_header {
+    height: 44px;
+    background-color: white;
+    // position: fixed;
+    width: 100%;
+    z-index: 100;
+  }
+
+  #back_button {
+    text-align: left;
+    padding: 5px 0 0px 1.7rem;
+    font-size: 3rem;
+    color: #011f46;
+    position: absolute;
+  }
+
+  .main_view {
+    background-color: #f7f6f6;
+  }
+
+  .info {
+    display: block;
+  }
+
+  .calc_info {
+    position: absolute;
+    left: 1rem;
+    width: 70%;
+    padding: 1rem 0 1rem 0;
+  }
+
+  .calc_price {
+    position: absolute;
+    right: 1rem;
+    text-align: right;
+    width: 25%;
+    padding: 1rem 0 1rem 0;
+  }
+
+  .result_list {
+    height: 60px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .result_item {
+    font-weight: 600;
+    font-size: 14px;
+    color: #011f46;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .result_details {
+    padding-top: 5px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #8794a8;
+  }
+
+  .total {
+    color: #fff;
+    font-size: 2.3rem;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .total_amount {
+    padding-top: 5px;
+    font-size: 14px;
+    color: #011f46 !important;
+    font-weight: 600;
+  }
+
+  .vessel_info {
+    padding-left: 15px;
+    color: white;
+    position: absolute;
+    left: 0;
+    width: 45%;
+  }
+
+  .vessel_info p {
+    margin: 0;
+    font-size: 11px;
+    text-transform: uppercase;
+    line-height: 13px;
+    margin: 2px 0 2px 0;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.69);
+  }
+
+  #vessel_info_title {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 10px;
+    text-align: right;
+    color: #fff; // line-height: 16px;
+    // text-decoration: underline;
+  }
+
+  .date_info {
+    padding-right: 10px;
+    color: white;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    width: 55%;
+  }
+
+  .date_info p {
+    margin: 0;
+    font-size: 13px;
+    text-transform: capitalize;
+    line-height: 13px;
+    margin: 2px 0 2px 15px;
+    text-align: right;
+  }
+
+  #date_info_title {
+    margin: 0 0 8px 0;
+    font-size: 11px;
+    text-transform: uppercase;
+    line-height: 17px;
+    text-align: right; // line-height: 16px;
+    // text-decoration: underline;
+  }
+
+  .half_1_overall_total {
+    width: 50%;
+    padding: 20px 10px 20px 10px;
+    float: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: #011f46;
+  }
+
+  .half_2_overall_total {
+    width: 50%;
+    float: right;
+    padding: 20px 10px 20px 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #011f46;
+    text-align: right;
+  }
+
+  .overall_total {
+    height: 60px;
+  }
+
+  #faux_title {
+    margin: 0;
+    text-align: center;
+    padding-top: 12px;
+    color: #011f46;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 22px;
+    letter-spacing: -0.09px;
+
+  }
+
+  .scroll-content {
+    margin-bottom: 0 !important; // padding-top:30rem;
+  }
+
+  .btn_group {
+    text-align: center;
+    display: block;
+  }
+
+  .finish_button {
+    width: 328px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    height: 50px;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+
+  .scroll-content {
+    margin-bottom: 0 !important;
+  }
+
+  .result_list:nth-child(1n) {
+    border-left: 2.5px solid #0d92ff;
+  }
+
+  .result_list:nth-child(2n) {
+    border-left: 2.5px solid #ffa91e;
+  }
+
+  .result_list:nth-child(3n) {
+    border-left: 2.5px solid #00cd8f;
+  }
+
+
+  .result_list:nth-child(4n) {
+    border-left: 2.5px solid #20d1ec;
+  }
+
+  .result_list:nth-child(5n) {
+    border-left: 2.5px solid #0d92ff;
+
+  }
+}

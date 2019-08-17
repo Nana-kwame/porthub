@@ -1,0 +1,247 @@
+  page-invoicing {
+    .area {
+      background-color: #f6f7f7;
+    }
+    .toolbar-background {
+      background-color: #124676;
+    }
+    .invoicing_actions {
+      padding: 7rem 5% 0 5%;
+    }
+    .invoicing_actions button {
+      width: 100%;
+      font-size: 2rem;
+      padding: 0;
+    }
+    .invoicing_actions p {
+      text-align: center;
+      padding-bottom: 3rem;
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+      color: #adaeaf;
+      font-size: 2rem;
+    }
+    .invoicing_actions h4 {
+      text-align: center;
+      padding-bottom: 4rem;
+      color: #124676;
+    }
+    .invoicing_actions ion-icon {
+      font-size: 3rem;
+      padding-left: 0;
+      padding-right: 2rem;
+    }
+    .invoicing_actions ion-col {
+      //    padding-right: 2rem;
+      padding-left: 0;
+    }
+    #button_text {
+      text-align: center;
+      font-weight: 400;
+      padding-top: 1.2rem;
+      font-size: 1.6rem;
+    }
+    .invoicing_actions ion-grid {
+      padding: 0;
+    }
+    ion-input {
+      border: #e0e0e0 1px solid; // margin-bottom:1.5rem;
+      padding: 0.1rem 1rem 0.1rem 1.5rem;
+      border-radius: 8px;
+      background-color: #fff;
+      font-size: 17px;
+      width: 100%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+    .category_select {
+      border: #e0e0e0 solid 1px;
+      width: 90%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      border-radius: 8px;
+      height: 50px;
+    }
+    .category_select .select-icon {
+      position: absolute;
+      right: 16px;
+    }
+    .category_select.item-block .item-inner {
+      border: none;
+    }
+    .select {
+      padding: 0;
+      max-width: 90%;
+    }
+    .form_contents {
+      padding-top: 60px
+    }
+    .multiple_select_entry {
+      width: 30%;
+      height: 40px;
+    }
+    .faux_radio_button .check_selector #check_mark_box {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      margin: 15px 23.5px;
+      position: absolute;
+      border: #e0e0e0 1px solid;
+    }
+    .faux_radio_button {
+      background-color: rgba(255, 255, 255, 1);
+      border: #e0e0e0 1px solid;
+      border-radius: 4px;
+      height: 50px;
+      position: relative;
+      cursor: pointer;
+      z-index: 100;
+      width: 90%;
+      margin-left: 5%;
+    }
+    .faux_radio_button .service_information p {
+      position: absolute;
+      left: 81px;
+      top: 0;
+    }
+    .faux_radio_button .service_information p:first-child {
+      font-size: 10px;
+      color: rgba(148, 157, 172, 1);
+      text-align: left;
+      line-height: 22px;
+      margin: 0;
+      padding-top: 9px;
+    }
+    .faux_radio_button .service_information_check {
+      font-size: 10px;
+      color: #000;
+      text-align: left;
+      line-height: 14px;
+      position: absolute;
+      left: 60px;
+      top: 18px;
+      font-size: 15px;
+      width: 100%;
+      margin: 0;
+      text-transform: capitalize;
+    }
+    .faux_radio_button .service_information p:last-child {
+      font-size: 14px;
+      font-weight: bold;
+      color: rgba(5, 28, 61, 1);
+      text-align: left;
+      line-height: 22px;
+      margin: 0;
+    }
+    .faux_radio_button .radio_selector {
+      display: inline-block;
+      width: 80px;
+      height: 60px;
+      position: absolute;
+      left: 0;
+    }
+    faux_radio_button .check_selector {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      left: 0;
+    }
+    .faux_radio_button .radio_selector #outer_circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      margin: 19px 23.5px;
+      position: absolute;
+      border: #e0e0e0 1px solid;
+      transition: border 200ms ease;
+    }
+    .faux_radio_button .check_selector #check_mark {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin: 3px 4px;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 200ms ease;
+    }
+    .select_radio {
+      border: 7px solid rgba(109, 194, 233, 1) !important;
+    }
+    .select_check {
+      opacity: 1 !important;
+    }
+    .loader {
+      text-align: center;
+      color: #124676;
+    }
+    .finish_button {
+      width: 100%;
+      left: 0;
+      right: 0;
+      margin: 0rem auto 0rem auto;
+      position: absolute;
+      bottom: 0;
+      border-radius: 0;
+      height: 50px;
+    }
+    .continue_button ion-grid {
+      padding: 0;
+    }
+    .continue_button ion-icon {
+      font-size: 3rem;
+      padding-left: 0;
+      padding-right: 2rem;
+    }
+    .continue_button ion-col {
+      //    padding-right: 2rem;
+      padding-left: 0;
+    }
+    #button_text {
+      text-align: center;
+      font-weight: 400;
+      padding-top: 1.2rem;
+      font-size: 1.6rem;
+    }
+    .scroll-content {
+      margin-bottom: 0 !important;
+    }
+    .datetime {
+      padding: 13px 8px 13px 16px;
+      background-color: #fff;
+      width: 96%;
+      margin-left: 2%; //   margin-top: 10px;
+      text-align: left;
+      border: none;
+    }
+    .datetime-text:empty:not(:focus):before {
+      content: "Service Date";
+      color: #b9b9b9
+    }
+    .item {
+      width: 96%;
+      margin-left: 2%;
+      margin-top: 10px;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+      padding-left: 35px;
+    }
+    .item.item-block .item-inner {
+      border: none;
+    }
+    .cal_icon {
+      position: absolute;
+      top: 23%;
+      z-index: 10;
+      left: 7%;
+      color: #5b5b5b;
+      font-size: 22px !important;
+    }
+
+    .picker .picker-prefix, .picker .picker-suffix, .picker .picker-opt .picker-opt-selected {
+      font-weight: 500 !important;
+      color: #02c39a !important;
+    }
+
+  }

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="faux_header">
+    <!--<ion-icon name="arrow-round-back" id="back_button" (click)="onBackTapped( )"></ion-icon>
+    <ion-icon name="clipboard" *ngIf="!checker" id="cart_button" (click)="goToClipboard( )"><ion-badge color="secondary" *ngIf="clipboardCount!=0">{{clipboardCount}}</ion-badge></ion-icon>-->
+    <p id="faux_title">Break Bulk</p>
+  </div>
+  <div class="vehicle_list">
+    <br />
+    <h6>Selected Item</h6>
+    <h5>{{breakBulkData[index].name}} with {{breakBulkData[index].dangerName}}</h5>
+    <br />
+    <h6>Gross Weight</h6>
+    <ion-input [(ngModel)]="breakBulkData[index].grossW" type="number" placeholder="Gross Weight"></ion-input>
+    <br />
+    <h6>Gross Volume</h6>
+    <ion-input [(ngModel)]="breakBulkData[index].grossCBM" type="number" placeholder="Gross Volume"></ion-input>
+    <br />
+    <h6>Quantity</h6>
+    <ion-input [(ngModel)]="breakBulkData[index].quantity" type="number" placeholder="Quantity"></ion-input>
+
+  </div>
+  <button class="continue_button finish_button" ion-button (click)="onBackTapped( )" icon-right>
+    Done
+
+  </button>
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="main_view">
+  <!-- <div class="loader" *ngIf="loading">
+    <ion-spinner color="primary">
+    </ion-spinner>
+    <br> Calculating...
+  </div>
+  <div *ngIf="!loading"> -->
+  <div id="faux_header">
+    <ion-icon name="arrow-back" id="back_button" *ngIf="!checker" (click)="onBackTapped( )"></ion-icon>
+    <p id="faux_title">Miscellaneous (Optional) </p>
+    <ion-icon name="md-clipboard" id="cart_button" (click)="goToClipboard( )">
+      <ion-badge color="secondary" *ngIf="clipboardCount!=0">{{clipboardCount}}</ion-badge>
+    </ion-icon>
+  </div>
+  <div class="form_contents">
+    <div class="check_box_block" *ngFor="let misc of miscs; let i =index">
+      <div class="faux_radio_button lookup_options" style="margin-bottom: 15px;" (click)="contentDetailClicked(i, misc)">
+        <span class="check_selector">
+          <div style="position:relative; width:100%; height:100%;">
+            <div id="check_mark_box" [ngClass]="{ check_box_clicked: misc.itemSelected}">
+              <ion-icon name='checkmark' id="check_mark" [ngClass]="{select_check:misc.itemSelected}"></ion-icon>
+            </div>
+          </div>
+        </span>
+        <p class="service_information_check">{{misc.name}}</p>
+      </div>
+      <div class="payment_method_param" [ngClass]="{show_engine_params : misc.itemSelected}">
+        <input type="number" placeholder="Quantity" [(ngModel)]="misc.quantity">
+      </div>
+    </div>
+  </div>
+  <!-- <button class="continue_button finish_button" ion-button block color="secondary" icon-right style="z-index: 100;" (click)="addToLoop()">Add To Clipboard</button> -->
+
+  <!-- </div> -->
+  <button class="continue_button finish_button" ion-button icon-right (click)="addToLoop( )">Continue</button>
+
+</ion-content>

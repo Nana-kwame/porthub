@@ -1,0 +1,42 @@
+page-send-bill {
+
+  .detail .scroll-content {
+    margin-bottom: 0px !important;
+  }
+
+.send_bill_data p{
+    text-align: center;
+    padding-bottom:1rem;
+    padding-right:2rem;
+    padding-left:2rem;
+    color:#adaeaf;
+    font-size: 2rem;
+}
+
+.send_bill_data ion-input{
+    border:#e0e0e0 1px solid;
+    margin-bottom:3rem;
+    padding:0.5rem 1rem 0.5rem 1rem;
+    border-radius:8px;
+}
+
+.send_bill_data button{
+    
+    font-weight: 400;
+    width:85%;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+
+.send_bill_data{
+    padding: 10rem 5% 0 5%;
+}
+
+.send_bill_data ion-icon{
+font-size: 5rem;
+text-align: center;
+display: block;
+color:#124676;
+}
+}

@@ -1,0 +1,40 @@
+page-verification {
+.verification_details ion-input{
+    border:#e0e0e0 1px solid;
+    margin-bottom:1.5rem;
+    padding:0.5rem 1rem 0.5rem 1rem;
+    border-radius:8px;
+}
+
+.verification_details{
+    width:80%;
+    position: absolute;
+    left:0;
+    right:0;
+    // top:50%;
+    margin:0 auto;
+}
+
+.verification_details p{
+    margin-bottom: 4rem;
+    width:100%;
+    text-align: center;
+}
+
+.main_area{
+    background-color: #f6f7f7;
+}
+
+// .verification_details button{
+//     background-color: #02c39a !important;
+//     padding: 0 !important;
+// }
+
+// .verification_details #verify_button:active{
+//     background-color: #02c39a !important;
+// }
+
+// .toolbar-background{
+//     background-color: rgba(0,0,0,0.3) !important;
+// }
+}

@@ -1,0 +1,51 @@
+page-welcome {
+
+.welcome_details{
+    width:80%;
+    position: absolute;
+    left:0;
+    right:0;
+    // top:50%;
+    margin:0 auto;
+}
+
+.welcome_details #agent_button{
+   
+    left: 0;
+    right:0;
+    margin:0 auto;
+   
+
+}
+
+.welcome_details #user_button{
+    
+    left: 0;
+    right:0;
+    margin:0 auto;
+    // border: #124676 1px solid;
+    // color:#124676;
+    // background-color: #fff;
+    padding:0 !important;
+    
+
+}
+
+// .welcome_details #user_button :active{
+//     background-color: #124676 !important;
+//     color: #fff;
+   
+// }
+
+.welcome_details h2{
+    text-align: center;
+    font-weight: 300;
+    margin-bottom:2rem;
+    padding:1rem;
+}
+
+
+
+}
+
+

@@ -1,0 +1,260 @@
+page-invoices {
+
+  .content {
+    background-color: #fff;
+
+    &__error-state {
+
+
+      &--image {
+        transform: scale(.5);
+        opacity: .7;
+      }
+
+      &--text {
+        font-size: 19px;
+        text-align: center;
+        word-wrap: break-word;
+        margin: 0
+      }
+
+      &--button {
+        width: 90vw;
+        height: 48px;
+        box-shadow: none;
+        border-radius: 8px;
+        text-transform: capitalize;
+        transform: translate(3%,100%);
+      }
+    }
+  }
+
+
+
+  .v2_heading {
+    text-align: left;
+    font-weight: 600;
+    font-size: 19px;
+    letter-spacing: .09px;
+    line-height: 22px;
+    color: #124676;
+  }
+
+  .main_body {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .search_bar {
+    width: 75%;
+    display: inline-block;
+    background: transparent;
+    border: none;
+    padding-left: 0px;
+  }
+
+  .search_bar .searchbar-input {
+    box-shadow: none;
+    padding-left: 27px;
+    color: #83899f;
+    font-size: 14px; // padding-top:15px;
+    background-color: transparent;
+  }
+
+  .search_bar .searchbar-search-icon {
+    background-image: url("../../assets/img/search.svg");
+    left: 0px;
+    width: 16px;
+    height: 16px;
+    background-size: 16px;
+    top: 12px;
+  }
+
+  .search_module {
+    position: relative;
+  }
+
+  .filter_container {
+    width: 23%;
+    border: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .filter_module {
+    position: relative;
+  }
+
+  .filter_label {
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    top: 7px;
+    color: #124676;
+    letter-spacing: 0.6px;
+    text-transform: capitalize;
+  }
+
+  .extra_padding {
+    margin-left: -25px !important;
+  }
+
+  .extra_padding_2 {
+    margin-left: -10px !important;
+  }
+
+  .filter_container img {
+    width: 8px;
+    display: inline-block;
+    transform: rotate(90deg);
+    position: absolute;
+    right: 0;
+    top: 23px;
+  }
+
+  .non_moving_section {
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    z-index: 100;
+    height: 56px;
+    box-shadow: 0 1px 5px 0 rgba(135, 148, 169, 0.10);
+    margin-top: 1%;
+
+    &--search_button {
+      transform: translate(302px, -126%);
+      background-color: white !important;
+      box-shadow: none !important;
+    }
+  }
+
+  .request_list {
+    // padding-top: 17vh;
+    // padding-right: 5%;
+   
+  }
+
+  .request_list_item {
+    // position: relative;
+  }
+
+  .request_list_item img {
+    position: absolute;
+    left: 5%;
+    padding: 12px 30px 20px 0;
+    width: 55px;
+  }
+
+  .request_list_item_data {
+    // border-bottom: solid 1px rgba(195, 199, 210, 0.4);
+    // width: calc(100%-50px);
+    // margin-left: 17%;
+    // position: relative;
+  }
+
+  .do_number {
+    color: #011f46;
+    font-weight: 600;
+    font-size: 16px;
+
+  }
+
+  .date {
+    color: #8794a8;
+    font-size: 14px;
+  }
+
+  .request_list_item_data span {
+    position: absolute;
+    width: 35%;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff;
+    background-color: #124676;
+    right: 0;
+    top: 12px;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 10px;
+  }
+
+  .loader {
+    text-align: center;
+    margin-top: 40vh;
+    color: #124676;
+  }
+
+  .invoice-header {
+    height: 56px;
+    background-color: white;
+    box-shadow: 0 1px 5px 0 rgba(135, 148, 169, 0.10);
+
+    &--title {
+      color: #011f46;
+      font-size: 22px;
+      line-height: 22px;
+      letter-spacing: -.09px;
+      font-weight: bolder;
+      margin-left: 16px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      padding-top: 16px;
+      padding-bottom: 8px;
+    }
+
+    &--searchBtn {
+      font-size: 19px;
+    }
+  }
+
+  .zoomIn {
+    animation: zoomIn .25s linear
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    animation: fadeIn .2s linear
+  }
+
+  .toolbar-ios-plain .searchbar-ios .searchbar-input {
+    color: #011f46;
+  }
+
+  .searchbar-md {
+    & .searchbar-input {
+      border-radius: unset;
+      box-shadow: unset;
+      color: #011f46;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    & .searchbar-search-icon {
+      display: none;
+    }
+  }
+
+
+}

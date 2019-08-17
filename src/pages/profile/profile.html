@@ -1,0 +1,149 @@
+<!--
+  Generated template for the Profile page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <div class="faux_toolbar"></div>
+</ion-header>
+
+<ion-content class="main__content">
+  <div class="main__content--navbar">
+    <ion-title class="main__content--navbar__title">
+      Profile
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="main__content--navbar__btn" (click)="goToNotificationPage()">
+        <ion-icon name="md-notifications-outline" color="plain">
+        </ion-icon>
+        <div class='notificationBadge' *ngIf=new_not_alert></div>
+      </button>
+    </ion-buttons>
+  </div>
+  <div class="main__content--blue_quarter">
+  
+
+    <div class="main__content--blue_quarter--circle">
+      <h6 class="main__content--blue_quarter--circle_header" [hidden]='!brokenImage'>{{intiials}}</h6>
+      <img src="./../../assets/imgs/undraw_profile_pic_ic5t.svg" alt="Profile Picture"
+        class="main__content--blue_quarter--circle_header">
+    </div>
+
+
+    <ion-card class="main__content--blue_quarter--card">
+      <ion-card-header>
+        <p class="main__content--blue_quarter--card_header">
+          {{agentData?.firstName}}
+        </p>
+        <p class="main__content--blue_quarter--card_subheader">{{agentData?.agentNo}}</p>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col width-50 class="main__content--blue_quarter--card_item">
+              <div class="main__content--blue_quarter--card_image">
+                <button ion-button icon-only color="plain">
+                  <ion-icon name="briefcase" color="darkblue"></ion-icon>
+                </button>
+              </div>
+              <div class="main__content--blue_quarter--card--title">
+                AgentID
+              </div>
+              <div class="main__content--blue_quarter--card--subtitle">
+                {{agentData?.agentId}}
+              </div>
+            </ion-col>
+
+            <ion-col width-50 class="main__content--blue_quarter--card_item">
+              <div class="main__content--blue_quarter--card_image">
+                <button ion-button icon-only color="plain">
+                  <ion-icon name="calendar" color="darkblue"></ion-icon>
+                </button>
+              </div>
+              <div class="main__content--blue_quarter--card--title">
+                Date of Certificate Issuance
+              </div>
+              <div class="main__content--blue_quarter--card--subtitle">
+                {{dateCreated}}
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col width-50 class="main__content--blue_quarter--card_item">
+              <div class="main__content--blue_quarter--card_image">
+                <button ion-button icon-only color="plain">
+                  <ion-icon name="close-circle" color="darkblue"></ion-icon>
+                </button>
+              </div>
+              <div class="main__content--blue_quarter--card--title">
+                Date of Certificate Expiry
+              </div>
+              <div class="main__content--blue_quarter--card--subtitle">
+                15 Dec 2019
+              </div>
+            </ion-col>
+            <ion-col width-50 class="main__content--blue_quarter--card_item">
+              <div class="main__content--blue_quarter--card_image">
+                <button ion-button icon-only color="plain">
+                  <ion-icon name="contacts" color="darkblue"></ion-icon>
+                </button>
+              </div>
+              <div class="main__content--blue_quarter--card--title">
+                Agent Status
+              </div>
+              <div class="main__content--blue_quarter--card--subtitle">
+                Active
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <!-- <div class="profile_data">
+
+    <div class="first_entry">
+      <ion-grid>
+        <ion-row>
+          <ion-col width-100 class="label">FIRST NAME</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col width-100 class="content">Kojo</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="first_entry">
+      <ion-grid>
+        <ion-row>
+          <ion-col width-100 class="label">LAST NAME</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col width-100 class="content">Owusu</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="first_entry">
+      <ion-grid>
+        <ion-row>
+          <ion-col width-100 class="label">AGENT ID</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col width-100 class="content">59FTPAIL</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="first_entry">
+      <ion-grid>
+        <ion-row>
+          <ion-col width-100 class="label">MOBILE NO.</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col width-100 class="content">+233543466820</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div> -->
+</ion-content>

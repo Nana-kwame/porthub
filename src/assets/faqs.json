@@ -1,0 +1,30 @@
+{
+  "faqs": [
+    {
+      "question": "Can I see all my incoming loads from the app ?",
+      "children": [
+        { "answer": "Yes, you can. This app was made specifically to help you" }
+      ]
+    },
+    {
+      "question": "Why are you still typing questions ?",
+      "children": [{ "answer": "I don't know, maybe I'm bored" }]
+    },
+    {
+      "question": "Lorem ipsum dolor sit amet consectetur adipisicing elit ?",
+      "children": [
+        {
+          "answer": "Dolor temporibus alias eum deleniti, debitis labore praesentium incidunt ipsa amet modi a ea obcaecati reprehenderit, nostrum soluta necessitatibus eveniet numquam quibusdam."
+        }
+      ]
+    },
+    {
+      "question": " Cumque sint vitae excepturi nulla cum minus, eum asperiores rerum. Numquam tempore voluptatum molestiae optio quae, quas cupiditate unde cum nostrum reprehenderit ?",
+      "children": [
+        {
+          "answer": "Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ]
+    }
+  ]
+}

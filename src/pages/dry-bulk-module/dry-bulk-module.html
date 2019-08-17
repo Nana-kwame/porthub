@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+
+  <ion-toolbar id='faux_header' color='plain'>
+    <p id='faux_title'>Dry Bulk</p>
+
+    <ion-buttons left>
+      <button ion-button icon-only color='plain' (click)="onBackTapped()">
+        <ion-icon name="arrow-back" id="back_button"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button icon-only color='plain' (click)="goToClipboard( )">
+        <ion-icon name="clipboard" *ngIf="!checker" id="cart_button">
+          <ion-badge color="blueheader" *ngIf="clipboardCount!=0">{{clipboardCount}}</ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="main_view">
+
+  <div class="vehicle_list">
+    <ion-item class="category_select">
+      <ion-select [(ngModel)]="dryBulkData.dryBulkId" multiple="false" placeholder="Select A Type Of Dry Bulk"
+        [selectOptions]="selectOptions" (ionChange)="pickDryBulkName(dryBulkData.dryBulkId)">
+        <ion-option *ngFor="let dryBulkType of dryBulkTypes; let i = index" value="{{dryBulkType.id}}">{{dryBulkType.item}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <br /> <br />
+    <ion-item class="category_select">
+      <ion-select [(ngModel)]="dryBulkData.dischargeId" multiple="false" placeholder="Select A Type Of Discharge"
+        [selectOptions]="dischargeSelectOptions" (ionChange)="pickDischargeName(dryBulkData.dischargeId)">
+        <ion-option *ngFor="let dischargeType of dischargeTypes" value="{{dischargeType.id}}">{{dischargeType.item}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <br /> <br />
+    <ion-input type="number" placeholder="Gross Tonnage" [(ngModel)]="dryBulkData.grossTonnage"></ion-input>
+  </div>
+
+  <!-- <button class="continue_button finish_button" ion-button block color="secondary" (click)="goToSummary( )" icon-right
+    [disabled]="!dryBulkData.dryBulkId || !dryBulkData.dischargeId || !dryBulkData.grossTonnage">
+    Add To Invoice
+
+        </button> -->
+
+  <button class="continue_button finish_button" ion-button icon-right [disabled]="!dryBulkData.dryBulkId || !dryBulkData.dischargeId || !dryBulkData.grossTonnage"
+    (click)="goToSummary( )">Add To Invoice</button>
+
+  <!-- <div class="button_group" style="z-index: 100;">
+    <div class="button_splitter">
+      <button class="continue_button finish_button" ion-button color="secondary" icon-right (click)="navToRoot()">Calculator
+        Home</button>
+    </div>
+    <div class="button_splitter">
+
+    </div>
+  </div> -->
+</ion-content>

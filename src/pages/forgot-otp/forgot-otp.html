@@ -1,0 +1,44 @@
+<ion-content class="main_body">
+  <p class="label_name">Enter OTP</p>
+  <div class="label_dot"></div>
+  <!-- <img src="assets/img/illustration.svg" alt="" class="compass">
+  <p class="wtp">Welcome To Porthub</p> -->
+  <p class="login_desc">Please enter OTP to reset your password.</p>
+  <!-- <div class="full_login_input">
+    <ion-input type="text" placeholder="AGENT ID" class="login_input" [(ngModel)]="agentId"></ion-input>
+    <img src="assets/img/next.png" alt="" class="look_up_button" (click)="agentIdEntered()">
+  </div> -->
+  <div class="pin_code">
+    <!-- <div class="flex-test"> -->
+    <div class="dim">
+      <input type="tel" class="pin_box otp_inputs" [(ngModel)]="pinCodeBoxes[0].model" value="pinCodeBoxes[0].id" [attr.maxlength]="1"
+        (keyup)="inputNavigator(pinCodeBoxes[0])" />
+    </div>
+    <div class="dim">
+      <input type="tel" class="pin_box otp_inputs" [(ngModel)]="pinCodeBoxes[1].model" value="pinCodeBoxes[1].id" [attr.maxlength]="1"
+        (keyup)="inputNavigator( pinCodeBoxes[1])" />
+    </div>
+    <div class="dim">
+      <input type="tel" class="pin_box otp_inputs" [(ngModel)]="pinCodeBoxes[2].model" value="pinCodeBoxes[2].id" [attr.maxlength]="1"
+        (keyup)="inputNavigator( pinCodeBoxes[2])" />
+    </div>
+    <div class="dim">
+      <input type="tel" class="pin_box otp_inputs" [(ngModel)]="pinCodeBoxes[3].model" value="pinCodeBoxes[3].id" [attr.maxlength]="1"
+        (keyup)="inputNavigator( pinCodeBoxes[3])" />
+    </div>
+    <div class="dim">
+      <input type="tel" class="pin_box otp_inputs" [(ngModel)]="pinCodeBoxes[4].model" value="pinCodeBoxes[4].id" [attr.maxlength]="1"
+        (keyup)="inputNavigator( pinCodeBoxes[4])" />
+    </div>
+    <div class="dim">
+      <input type="tel" class="pin_box otp_inputs" [(ngModel)]="pinCodeBoxes[5].model" value="pinCodeBoxes[5].id" [attr.maxlength]="1"
+        (keyup)="inputNavigator( pinCodeBoxes[5])" />
+    </div>
+  </div>
+  <!-- <img src="assets/img/separator.png" alt="" class="separator">
+  <p class="login_desc">Click to Proceed to Porthub</p> -->
+  <button class="go_to_porthub_button" (click)="goToReset()">Done</button>
+
+
+</ion-content>
+

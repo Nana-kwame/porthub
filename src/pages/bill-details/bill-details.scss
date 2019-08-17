@@ -1,0 +1,86 @@
+page-bill-details {
+
+.toolbar-background{
+    background-color: #124676;
+}
+
+.blue_quarter{
+    height:20rem;
+    background-color: #124676;
+    padding-top: 3rem;
+}
+
+.blue_quarter h5{
+    margin: 0;
+    text-align: center;
+    padding-bottom: 1rem;
+    color:#fff;
+}
+
+.white_circle{
+    width:10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: #fff;
+    left:0;
+    right:0;
+    margin:0 auto;
+    padding-top: 1.8rem;
+    
+}
+
+.header .toolbar-background{
+    border-style:none;
+}
+
+.blue_quarter ion-icon{
+    display:block;
+    right: 0;
+    left:0;
+    margin:0 auto;
+    text-align: center;
+    font-size: 6rem;
+    color: #124676;
+}
+
+.label{
+color:#a7a8a9;
+ padding-left:0;
+ 
+}
+
+.data{
+    text-align: right;
+    color:#a7a8a9;
+    padding-right:0;
+}
+
+.first_entry{
+    border-bottom: #cfd8e1 1px solid;
+}
+.final_entry{
+    border-bottom: none;
+   
+}
+
+.invoice_data{
+    padding-left: 7.5%;
+    padding-right:7.5%;
+    padding-top:1rem;
+}
+
+.invoice_data button{
+    
+    width:80%;
+    left:0;
+    right:0;
+    margin:4rem auto;
+}
+
+ion-grid{
+    height:40px;
+    padding-right:0;
+    padding-left:0;
+     
+}
+}

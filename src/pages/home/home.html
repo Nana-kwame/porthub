@@ -1,0 +1,162 @@
+<ion-header>
+  <ion-navbar color='light'>
+    
+
+    <ng-container *ngIf="showBack; else elseTemplate">
+      <ion-buttons left >
+        <button ion-button icon-only (click)="goBack()" color="plain">
+          <ion-icon name="arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <ion-buttons left>
+        <button ion-button icon-only (click)='goToLoginPage()'>
+          <ion-icon name='arrow-back'></ion-icon>
+        </button>
+      </ion-buttons>
+    </ng-template>
+    
+
+    <!-- <ion-buttons end *ngIf="!showBack">
+      <button ion-button icon-only (click)="goBack()" color="plain">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons> -->
+
+    <!-- For testing purposes I am  hiding this whole tabs -->
+    <ion-buttons left [hidden]='true'>
+      <button ion-button icon-only (click)="openFaqs()">
+        <ion-icon name="custom-headset"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end [hidden]='true'>
+      <button ion-button icon-only (click)="openNotifications()">
+        <ion-icon name="custom-notification"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content no-bounce class="content" style=" background-color: #f7f9fc;">
+
+  <div class="main_body">
+    <ion-refresher (ionRefresh)="doRefresh( )">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <div class="immovable">
+      <p class='immovable--header'> What's new?
+      </p>
+
+      <ion-row class='immovable--segment'>
+        <ion-col class='immmovable--segement__col' no-padding [ngClass]="{active: newsActive}">
+          <ion-label (click)="switchView()" class="news__btn">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"
+              viewBox="0 0 24 24" class='news-icon'>
+              <defs>
+                <path id="a"
+                  d="M17.505 3.678c-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5-1.45 0-2.99.22-4.28.79-.73.33-1.22 1.04-1.22 1.85v11.28c0 1.3 1.22 2.26 2.48 1.94.98-.25 2.02-.36 3.02-.36 1.56 0 3.22.26 4.56.92.6.3 1.28.3 1.87 0 1.34-.67 3-.92 4.56-.92 1 0 2.04.11 3.02.36 1.26.33 2.48-.63 2.48-1.94V6.318c0-.81-.49-1.52-1.22-1.85-1.28-.57-2.82-.79-4.27-.79zm3.5 12.73c0 .63-.58 1.09-1.2.98-.75-.14-1.53-.2-2.3-.2-1.7 0-4.15.65-5.5 1.5V7.178c1.35-.85 3.8-1.5 5.5-1.5.92 0 1.83.09 2.7.28.46.1.8.51.8.98v9.47z" />
+              </defs>
+              <g fill="none" fill-rule="evenodd">
+                <mask id="b" fill="#fff">
+                  <use xlink:href="#a" />
+                </mask>
+                <g fill="#000" fill-opacity=".54" mask="url(#b)" [ngClass]="{active: newsActive}">
+                  <path d="M0 0h24v24H0z" />
+                </g>
+              </g>
+            </svg>
+
+            News
+          </ion-label>
+
+        </ion-col>
+        <ion-col class='immmovable--segement__col' col-18 no-padding [ngClass]="{active: eyeActive}">
+          <ion-label (click)="switchView()" class="vid__btn">
+            <button ion-button icon-only color='plain' class='vid__btn--icon'>
+              <ion-icon name='qr-scanner' [ngClass]="{activeIcon: eyeActive}"></ion-icon>
+            </button>
+            Eye On Port
+          </ion-label>
+        </ion-col>
+      </ion-row>
+
+    </div>
+    <div class="eye_on_port_content" *ngIf="e_o_p">
+      <div class="loader" *ngIf="!videos">
+        <ion-spinner color="primary">
+        </ion-spinner>
+        <br> Loading...
+      </div>
+      <div *ngIf="videos">
+
+        <!-- Eye on port -->
+        <!-- class="eye_on_port_item" -->
+        <div class='card__container' *ngFor="let video of videos">
+          <!-- <p class="item_title">{{video.snippet.title}}</p> -->
+          <!-- <p class="item_desc">{{video.snippet.description}}</p>
+          <p class="item_date">{{video.snippet.publishedAt | date: 'd' }}th {{video.snippet.publishedAt | date: 'MMMM' }} {{video.snippet.publishedAt
+            | date: 'yyyy' }}</p>
+          <div class="item_image">
+              <img-loader src="{{video.snippet.thumbnails.high.url}}" alt=""></img-loader>
+          </div> -->
+
+          <!-- For my own benefit to test using the ion-card -->
+          <ion-card class="card__view" (click)="openWebView(video.id.videoId)">
+            <img src="{{video.snippet.thumbnails.high.url}}" class='card__view--vid-preview'>
+            <ion-card-content class="card__view--vid-desc">
+              <img src='../../assets/img/play_btn.svg' class="card__view--play-circle" />
+
+              <p class='card__view--vid-title'> {{video.snippet.title | titlecase }} </p>
+
+              <ion-label class="card__view--desc">
+                <div class="card__view--desc-date">
+                  {{video.snippet.publishedAt | date: 'd'}}
+                  {{video.snippet.publishedAt | date:
+                  'MMMM'}}
+                  {{ video.snippet.publishedAt | date: 'yyyy'}} - {{ video.snippet.publishedAt | date: 'shortTime'}}
+                </div>
+              </ion-label>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event )" [enabled]=true>
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+
+    <!-- News feed -->
+    <div class="news_content" *ngIf="news">
+      <div class="loader" *ngIf="!feeds">
+        <ion-spinner color="primary">
+        </ion-spinner>
+        <br> Loading...
+      </div>
+      <div class='eye_on_port' *ngIf="feeds">
+        <div class="eye_on_port_item" (click)="newsItemTapped($event ,feed)" *ngFor="let feed of feeds">
+
+          <ion-card class='eye_on_port_item--card'>
+            <img src="{{feed.newsImages}}" alt="" onError=" this.src = 'assets/img/ship.png'"
+              class='eye_on_port_item--image'>
+            <div>
+              <ion-card-content>
+                <p class="eye_on_port_item--news_title">{{feed.title | titlecase}}</p>
+                <!-- <p class="item_desc" [innerHTML]="feed.body"></p> -->
+                <p class="eye_on_port_item--date">
+                  {{feed.datePosted | date: 'd' }} {{feed.datePosted | date: 'MMMM' }} {{feed.datePosted
+                  | date: 'yyyy' }}</p>
+              </ion-card-content>
+            </div>
+          </ion-card>
+
+        </div>
+      </div>
+      <ion-infinite-scroll (ionInfinite)="doNewsInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+  </div>
+</ion-content>

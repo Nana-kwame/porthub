@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class='main-content'>
+  <div class="loader" *ngIf="loading">
+    <ion-spinner color="primary">
+    </ion-spinner>
+    <br> Calculating...
+  </div>
+  <div *ngIf="!loading" class='data-content'>
+    <div id="faux_header">
+      <ion-icon name="arrow-back" id="back_button" (click)="onBackTapped( )"></ion-icon>
+      <p id="faux_title">Unoffical Invoice</p>
+    </div>
+    <div>
+      <p id="vessel_info_title">Vessel Information</p>
+      <div class='blue_quarter'>
+        <span class="vessel_info">
+          <p *ngIf="parsedCalculatorData.cpName">Call Purpose : </p>
+          <p *ngIf="parsedCalculatorData.vessel">Vessel Type : </p>
+          <p *ngIf="parsedCalculatorData.length">Length Overall : </p>
+          <p>Gross Tonnage : </p>
+          <p>Duration : </p>
+        </span>
+
+        <span class="date_info">
+          <p id="date_info_title">{{parsedCalculatorData.dateCreated | date: 'mediumDate'}}</p>
+          <p *ngIf="parsedCalculatorData.cpName">{{parsedCalculatorData.cpName}}</p>
+          <p *ngIf="parsedCalculatorData.vessel">{{parsedCalculatorData.vessel}}</p>
+          <p *ngIf="parsedCalculatorData.length">{{parsedCalculatorData.length}}</p>
+          <p>{{parsedCalculatorData.grossTonnage}} tons</p>
+          <p>{{parsedCalculatorData.duration}} days</p>
+        </span>
+      </div>
+    </div>
+    <div class="invoice_data">
+      <ion-list class="result_list" *ngFor="let calculatedResult of calculatedResults[0].invoiceData">
+        <span class="calc_info">
+          <span class="info result_item">{{calculatedResult.groupCategory}}</span>
+          <span class="info result_details" *ngIf="calculatedResult.charge">{{parsedData(calculatedResult.charge)}} x
+            {{calculatedResult.quantity}} {{calculatedResult.chargeType}}</span>
+        </span>
+        <span class="calc_price">
+          <span class="info result_item">{{calculatedResults[0].overallChargeModel.currency}}</span>
+          <span class="info result_details total_amount">{{parseData(calculatedResult.subtotal)}}</span>
+        </span>
+      </ion-list>
+      <div class="overall_total">
+        <span class="half_1_overall_total">Total amount due</span>
+        <span class="half_2_overall_total">{{parseData(calculatedResults[0].overallChargeModel.amount)}}
+          {{calculatedResults[0].overallChargeModel.currency}}</span>
+      </div>
+    </div>
+
+    <div class='btn_group'>
+      <button ion-button class='main_btn' (click)="navToRoot()">Done</button>
+    </div>
+  </div>
+</ion-content>

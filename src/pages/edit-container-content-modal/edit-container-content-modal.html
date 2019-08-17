@@ -1,0 +1,80 @@
+<ion-content class="main-body">
+  <div id="faux_header">
+    <!-- <ion-icon name="arrow-round-back" id="back_button" *ngIf="!checker" (click)="onBackTapped( )"></ion-icon> -->
+    <p id="faux_title">Edit Entries</p>
+    <ion-icon name="checkmark" id="cart_button" (click)="done( )">
+    </ion-icon>
+  </div>
+  <div class="form_contents">
+    <div class="content_splitter">
+      Shore Handling
+    </div>
+    <ion-item class="category_select">
+      <ion-select [(ngModel)]="tempData.size_of_container" multiple="false" placeholder="Select Size Of Container" [selectOptions]="containerSelectOptions" (ionChange)="containerSelected( )">
+        <ion-option *ngFor="let containerType of parsedData.size_of_container" value="{{containerType.id}}" [selected]="containerType.selected">{{containerType.size}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <div style="height:2vh;" id="divider"></div>
+    <ion-item class="category_select">
+      <ion-select [(ngModel)]="tempData.delivery_mode" multiple="false" placeholder="Select A Delivery Mode" [selectOptions]="modeSelectOptions"
+        (ionChange)="deliveryModeSelected( )">
+        <ion-option *ngFor="let deliveryMode of parsedData.delivery_mode" value="{{deliveryMode.id}}" [selected]="deliveryMode.selected">{{deliveryMode.mode}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <div style="height:2vh;" id="divider"></div>
+    <ion-input type="number" placeholder="Number of BL" [(ngModel)]="parsedData.number_of_bl"></ion-input>
+    <div style="height:2vh;" id="divider"></div>
+    <ion-input type="number" placeholder="Storage Period" [(ngModel)]="parsedData.storage_period"></ion-input>
+    <!-- This is where Container Contents Begin -->
+    <div class="content_splitter" style="margin-top:10px;">
+      Container Contents
+    </div>
+    <div class="check_box_block" *ngFor="let content of parsedData.contents; let i =index">
+      <div class="faux_radio_button lookup_options" style="margin-bottom: 15px;" (click)="contentDetailClicked(i, content)">
+        <span class="check_selector">
+            <div style="position:relative; width:100%; height:100%;">
+              <div id="check_mark_box">
+                <img src="assets/img/check.svg" alt=""  id="check_mark" [ngClass]="{select_check:content.itemSelected}">
+              </div>
+            </div>
+          </span>
+        <p class="service_information_check">{{content.content}}</p>
+      </div>
+      <div class="payment_method_param" [ngClass]="{show_engine_params : content.show_engine_options}">
+        <input type="number" placeholder="Quantity" [(ngModel)]="content.quantity">
+      </div>
+      <div class="vehicle_param" [ngClass]="{show_vehicle_params : content.show_vehicle_options}">
+        <div class="faux_radio_button lookup_options inner_check_box" (click)="vehicleTypeClicked(i, vehicleType)" *ngFor="let vehicleType of vehicleTypes; let i=index">
+          <span class="check_selector">
+            <div style="position:relative; width:100%; height:100%;">
+               <div id="check_mark_box">
+                <img src="assets/img/check.svg" alt=""  id="check_mark" [ngClass]="{select_check:vehicleType.itemSelected}">
+               </div>
+              <p class="selected_amount" *ngIf="vehicleType.quantity">( {{vehicleType.quantity}} )</p>
+            </div>
+          </span>
+          <p class="service_information_check">{{vehicleType.type}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="content_splitter" style="margin-top:10px;">
+      Miscellaneous (Optional)
+    </div>
+    <div class="check_box_block" *ngFor="let misc of parsedData.miscellaneous; let i =index">
+      <div class="faux_radio_button lookup_options" style="margin-bottom: 15px;" (click)="miscDetailClicked(i, misc)">
+        <span class="check_selector">
+            <div style="position:relative; width:100%; height:100%;">
+              <div id="check_mark_box">
+                <img src="assets/img/check.svg" alt=""  id="check_mark" [ngClass]="{select_check:misc.itemSelected}">
+              </div>
+            </div>
+          </span>
+        <p class="service_information_check">{{misc.name}}</p>
+      </div>
+      <div class="payment_method_param" [ngClass]="{show_engine_params : misc.itemSelected}">
+        <input type="number" placeholder="Quantity" [(ngModel)]="misc.quantity">
+      </div>
+    </div>
+  </div>
+
+</ion-content>

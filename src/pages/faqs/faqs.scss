@@ -1,0 +1,46 @@
+page-faqs {
+
+  .content {
+    background-color: rgb(246,247,247);
+  }
+
+  .item {
+     background-color: rgb(246,247,247);
+    overflow: hidden !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // .label {
+  //   white-space: pre-wrap;
+  // }
+
+  .section {
+    background: rgb(246,247,247);
+    color: #000;
+    margin-bottom: 4px;
+  }
+  .section-active {
+    background: #fefefe;
+    color: #313639;
+  }
+
+  .bg-white {
+    background-color: #fefefe;
+  }
+
+  .word-wrap {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.child {
+  background: #fefefe;
+  color: #000;
+  margin-bottom: 4px;
+}
+.child-item {
+  background: #fefefe;
+  padding: -10px;
+}
+}

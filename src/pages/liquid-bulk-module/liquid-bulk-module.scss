@@ -1,0 +1,134 @@
+page-liquid-bulk-module {
+  .main_view {
+    background-color: #f7f6f6;
+  }
+
+  .category_select {
+    border: #e0e0e0 solid 1px;
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 8px;
+    height: 50px;
+
+  }
+
+  .category_select .select-icon {
+    position: absolute;
+    right: 16px;
+  }
+
+  .category_select.item-block .item-inner {
+    border: none;
+  }
+
+  .select {
+    padding: 0;
+    max-width: 90%;
+  }
+
+  .button_group {
+    padding: 0 7%;
+  }
+
+  // .continue_button ion-grid{
+  //     padding:0;
+  // }
+
+  // .continue_button{
+  //     left:0;
+  //     right:0;
+  //     margin:0 auto;
+  //     display: block;
+  //     // margin-top: 100px;
+  //     width:90%;
+  //     position: absolute;
+  //     bottom:20px;
+  // }
+  // .continue_button ion-icon{
+  //     font-size: 3rem;
+  //     padding-left:0;
+  //     padding-right: 2rem;
+  // }
+
+  // .continue_button ion-col{
+  // //    padding-right: 2rem;
+  //     padding-left:0;
+
+  // }
+
+  // #button_text{
+  //     text-align: center;
+  //     font-weight: 400;
+  //     padding-top:1.2rem;
+  //     font-size:1.6rem;
+
+
+  // }
+
+  .form_elements {
+    padding-top: 20vh;
+  }
+
+  #faux_header {
+    // height: 44px;
+    background-color: white;
+    width: 100%;
+    z-index: 100;
+
+  }
+
+  #back_button {
+    text-align: left;
+    padding: 5px 0 0px 1.7rem;
+    font-size: 2.5rem;
+    color: #011f46;
+    // position: absolute;
+  }
+
+  #faux_title {
+    margin: 0;
+    /* display: inline-block; */
+    text-align: center;
+    padding-top: 12px;
+    color: #011f46;
+    font-weight: 600;
+    font-size: 1.6rem;
+
+  }
+
+  #cart_button {
+    color: #011f46;
+  }
+
+  ion-input {
+    border: #e0e0e0 1px solid;
+    // margin-bottom:1.5rem;
+    padding: 0.1rem 1rem 0.1rem 1.5rem;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 17px;
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+  }
+
+  // .finish_button{
+
+  //     width:100%;
+  //     left:0;
+  //     right:0;
+  //     margin:0rem auto 0rem auto;
+  //     position: absolute;
+  //     bottom:0;
+  //     border-radius: 0;
+  //     height:50px;
+  // }
+
+  .scroll-content {
+    margin-bottom: 0 !important;
+  }
+}

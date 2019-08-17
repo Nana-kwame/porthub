@@ -1,0 +1,81 @@
+<!--
+  Generated template for the StevedorAndPortDuesResult page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+
+<ion-content class="area">
+  <div class="loader" *ngIf="loading">
+    <ion-spinner color="primary">
+    </ion-spinner>
+    <br> Calculating...
+  </div>
+  <div *ngIf="!loading">
+    <div id="faux_header">
+      <ion-icon name="arrow-back" id="back_button" (click)="onBackTapped( )"></ion-icon>
+      <p id="faux_title">Unoffical Invoice</p>
+    </div>
+
+    <div class="data_body">
+
+      <div class="invoice_lists">
+        <h3 class="invoice_lists--header"> PORT DUES</h3>
+        <div class="invoice_data">
+          <div class="result_list" *ngFor="let calculatedPortDuesResult of calculatedPortDuesResults.invoiceData">
+            <span class="calc_info">
+              <span class="info result_item">{{calculatedPortDuesResult.item}}</span>
+              <span class="info result_details" *ngIf="calculatedPortDuesResult.charge || calculatedPortDuesResult.charge!=null">{{parsedData(calculatedPortDuesResult.charge)}}
+                x {{calculatedPortDuesResult.quantity}} {{calculatedPortDuesResult.chargeType}}</span>
+
+            </span>
+            <span class="calc_price">
+              <span class="info result_item"></span>
+              <span class="info result_details total_amount">{{parseData(calculatedPortDuesResult.subtotal)}}
+                {{calculatedPortDuesResults.overallChargeModel.currency}}</span>
+            </span>
+          </div>
+          <div class="overall_total">
+            <span class="half_1_overall_total">Total Amount Due</span>
+            <span class="half_2_overall_total">{{parseData(calculatedPortDuesResults.overallChargeModel.amount)}}
+              {{calculatedPortDuesResults.overallChargeModel.currency}}</span>
+          </div>
+
+        </div>
+      </div>
+      <div class="invoice_lists">
+        <h3 class="invoice_lists--header"> STEVEDORE CHARGES</h3>
+        <div class="invoice_data">
+          <div class="result_list" *ngFor="let calculatedStevedoreResult of calculatedStevedoreResults.invoiceData">
+            <span class="calc_info">
+              <span class="info result_item">{{calculatedStevedoreResult.item}}</span>
+              <span class="info result_details" *ngIf="calculatedStevedoreResult.charge || calculatedStevedoreResult.charge!=null">{{parsedData(calculatedStevedoreResult.charge)}}
+                x {{calculatedStevedoreResult.quantity}} {{calculatedStevedoreResult.chargeType}}</span>
+
+            </span>
+            <span class="calc_price">
+              <span class="info result_item"></span>
+              <span class="info result_details total_amount">{{parseData(calculatedStevedoreResult.subtotal)}}
+                {{calculatedStevedoreResults.overallChargeModel.currency}}</span>
+            </span>
+          </div>
+          <div class="overall_total">
+            <span class="half_1_overall_total">Total Amount Due</span>
+            <span class="half_2_overall_total">{{parseData(calculatedStevedoreResults.overallChargeModel.amount)}}
+              {{calculatedStevedoreResults.overallChargeModel.currency}}</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <div class='btn_group'>
+      <button ion-button class="finish_button" (click)="navToRoot( )">Done</button>
+
+    </div>
+  </div>
+</ion-content>

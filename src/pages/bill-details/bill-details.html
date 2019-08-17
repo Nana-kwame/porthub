@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left (click)="onBackTapped( )">
+      <button ion-button icon-only color="plain">
+        <ion-icon name="arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="detail">
+  <div class='blue_quarter'>
+    <h5>YOUR BILL</h5>
+    <div class="white_circle">
+      <ion-icon name="paper"></ion-icon>
+    </div>
+  </div>
+  <div class="invoice_data">
+    <div class="first_entry">
+      <ion-grid>
+        <ion-row>
+          <ion-col width-50 class="label">Ammount Due</ion-col>
+          <ion-col width-50 class="data">GHC 7500</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="first_entry">
+      <ion-grid>
+        <ion-row>
+          <ion-col width-50 class="label">Tax</ion-col>
+          <ion-col width-50 class="data">GHC 54</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="final_entry">
+      <ion-grid>
+        <ion-row>
+          <ion-col width-50 class="label">Total Due</ion-col>
+          <ion-col width-50 class="data">GHC 7554</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <button ion-button block color="secondary" (click)="sendInvoiceTapped( )">Send Invoice</button>
+  </div>
+</ion-content>

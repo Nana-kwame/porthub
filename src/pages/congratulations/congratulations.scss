@@ -1,0 +1,64 @@
+page-congratulations {
+
+    .area{
+    background-color: #f6f7f7;
+}
+
+.toolbar-background{
+    background-color: #124676;
+}
+
+.congratulations_body{
+    padding-right:5%;
+    padding-left:5%;
+    padding-top:5rem;
+
+}
+
+.card-content ion-icon{
+text-align: center;
+font-size: 4rem;
+display: block;
+margin-bottom: 1.5rem;
+}
+
+.card-content h3{
+text-align: center;
+color:#124676;
+// font-weight: 500;
+font-size: 2rem;
+margin-bottom: 1.5rem;
+}
+
+.card-content p{
+text-align: center;
+color:#124676;
+// font-weight: 500;
+font-size: 1.5rem;
+color:#adaeaf;
+}
+
+.card-content{
+    background-color: #fff;
+}
+
+.card{
+    border-radius: 6px;
+
+}
+
+.button_set{
+padding-top:1.5rem;
+    width:75%;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+
+.button_set button{
+    margin-top:1.5rem;
+    font-weight: 400;
+}
+
+
+}

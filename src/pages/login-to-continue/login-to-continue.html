@@ -1,0 +1,91 @@
+<!--
+  Generated template for the LoginToContinue page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-header>
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="main_body">
+
+  <button ion-button small color='light' class='go_to_porthub_label' (click)="goToPorthub()">
+    GO TO PORTHUB
+    <!-- <img src="assets/img/chevron_right.png" alt="go icon"> -->
+    <ion-icon name='ios-arrow-forward' class='go_to_porthub_label--arrow'></ion-icon>
+    <!-- <ion-label class='go_to_porthub_label'>
+    </ion-label> -->
+  </button>
+
+
+  <img src="../../assets/img/logo.png" alt="" class="compass" [hidden]=welcome_screen>
+
+  <div [hidden]=welcome_screen>
+
+    <p class="main_body--header">Welcome back</p>
+    <p class="main_body--subheader">Enter your Agent ID to begin login</p>
+
+    <ion-item class='main_body--login-input'>
+      <ion-label floating class='main_body--login-input--text'>Agent ID</ion-label>
+      <ion-input type="text" class='login-input' [(ngModel)]="agentId" (keydown.enter)='onEnter()'></ion-input>
+    </ion-item>
+
+    <button ion-button class='main_body--login-input--continue-btn' (click)='onEnter()' [disabled]='!input'>
+      <div>
+        Continue
+      </div>
+    </button>
+
+  </div>
+
+
+  <div [hidden]=enter_pin>
+    <ion-item icon-only (click)="onEnter()" class='back_btn'>
+      <ion-icon name='arrow-back'></ion-icon>
+    </ion-item>
+    <p class="login_desc--secret-pin_text">Enter your Secret PIN</p>
+    <p class='login_desc--subheader'>Enter your PIN to login</p>
+    <div class="pin_code">
+      <!-- <div class="flex-test"> -->
+
+      <div class="dim">
+        <input type="tel" class="pin_box" [(ngModel)]="pinCodeBoxes[0].model" [attr.maxlength]="1" (keyup)="inputNavigator( $event ,pinCodeBoxes[0])"
+          [ngClass]="{ 'blue-background' : pinCodeBoxes[0].model !== '' }" />
+      </div>
+      <div class="dim">
+        <input type="tel" class="pin_box" [(ngModel)]="pinCodeBoxes[1].model" [attr.maxlength]="1" (keyup)="inputNavigator($event ,pinCodeBoxes[1])"
+          [ngClass]="{ 'blue-background' : pinCodeBoxes[1].model !== '' }" />
+      </div>
+      <div class="dim">
+        <input type="tel" class="pin_box" [(ngModel)]="pinCodeBoxes[2].model" [attr.maxlength]="1" (keyup)="inputNavigator($event ,pinCodeBoxes[2])"
+          [ngClass]="{ 'blue-background' : pinCodeBoxes[2].model !== '' }" />
+      </div>
+      <div class="dim">
+        <input type="tel" class="pin_box" [(ngModel)]="pinCodeBoxes[3].model" [attr.maxlength]="1" (keyup)="inputNavigator($event ,pinCodeBoxes[3])"
+          [ngClass]="{ 'blue-background' : pinCodeBoxes[3].model !== '' }" />
+      </div>
+      <div class="dim">
+        <input type="tel" class="pin_box" [(ngModel)]="pinCodeBoxes[4].model" [attr.maxlength]="1" (keyup)="inputNavigator($event ,pinCodeBoxes[4])"
+          [ngClass]="{ 'blue-background' : pinCodeBoxes[4].model !== '' }" />
+      </div>
+      <div class="dim">
+        <input type="tel" class="pin_box" [(ngModel)]="pinCodeBoxes[5].model" [attr.maxlength]="1" (keyup)="inputNavigator( $event,pinCodeBoxes[5])"
+          [ngClass]="{ 'blue-background' : pinCodeBoxes[5].model !== '' }" />
+      </div>
+    </div>
+
+    <button ion-button class='login-input--continue-btn' [hidden]=tryAgainBtn (click)="tryAgainBtnClicked()" class='main_body--login-input--continue-btn'>
+      Try Again</button>
+
+  </div>
+
+
+
+
+
+</ion-content>

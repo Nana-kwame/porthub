@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+
+  <ion-toolbar color='plain' id='faux_header'>
+    <p id="faux_title">Liquid Bulk</p>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="vehicle_list">
+    <br />
+    <h6>Selected Item</h6>
+    <h5>{{liquidBulkData.name}}</h5>
+    <br />
+    <!--<h6>Gross Weight</h6>
+    <ion-input [(ngModel)]="breakBulkData[index].grossW" type="number" placeholder="Gross Weight"></ion-input>
+    <br/>
+    <h6>Gross Volume</h6>
+    <ion-input [(ngModel)]="breakBulkData[index].grossCBM" type="number" placeholder="Gross Volume"></ion-input>
+    <br/>-->
+    <h6>Gross Tonnage</h6>
+    <ion-input [(ngModel)]="liquidBulkData.grossTonnage" type="number" placeholder="Gross Tonnage"></ion-input>
+
+  </div>
+
+  <div class='btn_group'>
+    <button class="continue_button finish_button" ion-button (click)="onBackTapped( )" icon-right>
+      Done
+    </button>
+  </div>
+
+</ion-content>

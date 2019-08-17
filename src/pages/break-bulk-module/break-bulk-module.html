@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+
+  </ion-toolbar>
+
+  <ion-toolbar id='faux_header' color='plain'>
+    <p id='faux_title'>Break Bulk</p>
+
+    <ion-buttons left>
+      <button ion-button icon-only color='plain' (click)="onBackTapped( )">
+        <ion-icon name="arrow-round-back" id="back_button" ></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button icon-only color='plain' (click)="goToClipboard( )">
+        <ion-icon name="clipboard" *ngIf="!checker" id="cart_button" >
+          <ion-badge color="blueheader" *ngIf="clipboardCount != 0">{{clipboardCount}}</ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div id="faux_header">
+    <ion-icon name="arrow-round-back" id="back_button" (click)="onBackTapped( )"></ion-icon>
+    <ion-icon name="clipboard" *ngIf="!checker" id="cart_button" (click)="goToClipboard( )">
+      <ion-badge color="blueheader" *ngIf="clipboardCount!=0">{{clipboardCount}}</ion-badge>
+    </ion-icon>
+    <p id="faux_title">Break Bulk</p>
+  </div> -->
+  <div class="vehicle_list">
+    <ion-item class="category_select">
+      <ion-select [(ngModel)]="breakBulkData.breakBulkId" multiple="false" placeholder="Select A Type Of Break Bulk"
+        [selectOptions]="selectOptions" (ionChange)="pickBreakBulkName(breakBulkData.breakBulkId)">
+        <ion-option *ngFor="let breakBulkType of breakBulkTypes" value="{{breakBulkType.id}}">{{breakBulkType.item}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <br /><br />
+
+    <ion-item class="category_select">
+      <ion-select [(ngModel)]="breakBulkData.dangerId" multiple="false" placeholder="Select A Danger Status"
+        [selectOptions]="dangerSelectOptions" (ionChange)="pickDangerName(breakBulkData.dangerId)">
+        <ion-option *ngFor="let danger of dangers" value="{{danger.id}}">{{danger.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <br /><br />
+
+    <ion-input [(ngModel)]="breakBulkData.grossW" type="number" placeholder="Gross Weight"></ion-input>
+    <br /><br />
+    <ion-input [(ngModel)]="breakBulkData.grossCBM" type="number" placeholder="Gross Volume"></ion-input>
+    <br /><br />
+    <ion-input [(ngModel)]="breakBulkData.quantity" type="number" placeholder="Quantity"></ion-input>
+
+  </div>
+  <!-- <button class="continue_button finish_button" ion-button block color="secondary" (click)="goToSummary( )" icon-right
+    [disabled]="!breakBulkData.breakBulkId || !breakBulkData.dangerId || !breakBulkData.grossW ||  !breakBulkData.grossCBM || !breakBulkData.quantity">
+    Add To Invoice
+
+        </button> -->
+  <div class="button_group" style="z-index: 100;">
+
+    <button class="continue_button finish_button" ion-button icon-right [disabled]="!breakBulkData.breakBulkId || !breakBulkData.dangerId || !breakBulkData.grossW ||  !breakBulkData.grossCBM || !breakBulkData.quantity"
+      (click)="goToSummary( )">Add To Invoice</button>
+
+    <!-- <div class="button_splitter">
+      <button class="continue_button finish_button" ion-button color="secondary" icon-right (click)="navToRoot()">Calculator
+        Home</button>
+    </div>
+    <div class="button_splitter">
+      <button class="continue_button finish_button" ion-button color="secondary" icon-right [disabled]="!breakBulkData.breakBulkId || !breakBulkData.dangerId || !breakBulkData.grossW ||  !breakBulkData.grossCBM || !breakBulkData.quantity"
+        (click)="goToSummary( )">Add To Invoice</button>
+    </div> -->
+  </div>
+</ion-content>

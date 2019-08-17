@@ -1,0 +1,7 @@
+{
+  "name": "porthub",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

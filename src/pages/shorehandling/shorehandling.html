@@ -1,0 +1,70 @@
+<!--
+  Generated template for the Shorehandling page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="main_view">
+  <div id="faux_header">
+    <ion-icon name="arrow-back" id="back_button" *ngIf="clipboardCount < 1 && show_back=='true'" (click)="onBackTapped( )"></ion-icon>
+    <button ion-button icon-only (click)="goToClipboard( )" class='clipboard' color='plain'>
+      <ion-icon name="md-clipboard" id="cart_button"> </ion-icon>
+      <ion-badge *ngIf="clipboardCount!=0" class='clipboard--count'>{{clipboardCount}}</ion-badge>
+    </button>
+    <p id="faux_title">Shore Handling</p>
+  </div>
+  <div class="form_contents">
+    <ion-item class="category_select" *ngIf="clipboardCount<1">
+      <ion-select [(ngModel)]="temp_data.imex" multiple="false" placeholder="Select An Activity" [selectOptions]="activitySelectOptions"
+        (ionChange)="activitySelected( )">
+        <ion-option *ngFor="let activityType of activityTypes" value="{{activityType.id}}">{{activityType.name}}
+        </ion-option>
+
+      </ion-select>
+    </ion-item>
+    <div style="height:2vh;" id="divider"></div>
+    <ion-item class="category_select">
+      <ion-select [(ngModel)]="temp_data.size_of_container" multiple="false" placeholder="Select Size Of Container"
+        [selectOptions]="containerSelectOptions" (ionChange)="containerSelected( )">
+        <ion-option *ngFor="let containerType of containerTypes" value="{{containerType.id}}">{{containerType.size}}
+        </ion-option>
+
+      </ion-select>
+    </ion-item>
+    <div style="height:2vh;" id="divider"></div>
+    <!-- <ion-item class="category_select">
+      <ion-select [(ngModel)]="selected_data.delivery_type" multiple="false" placeholder="Select A Delivery Type" [selectOptions]="activitySelectOptions"
+        (ionChange)="activitySelected( )">
+        <ion-option *ngFor="let deliveryType of deliveryTypes" value="{{deliveryType.id}}">{{deliveryType.type}} </ion-option>
+
+      </ion-select>
+    </ion-item> -->
+    <!-- <div style="height:2vh;" id="divider"></div> -->
+    <ion-item class="category_select">
+      <ion-select [(ngModel)]="temp_data.delivery_mode" multiple="false" placeholder="Select A Delivery Mode"
+        [selectOptions]="modeSelectOptions" (ionChange)="deliveryModeSelected( )">
+        <ion-option *ngFor="let deliveryMode of deliveryModes" value="{{deliveryMode.id}}">{{deliveryMode.mode}}
+        </ion-option>
+
+      </ion-select>
+    </ion-item>
+    <div style="height:2vh;" id="divider"></div>
+    <ion-input type="number" placeholder="Number of BL" [(ngModel)]="selected_data.number_of_bl"></ion-input>
+    <div style="height:2vh;" id="divider"></div>
+    <ion-input type="number" placeholder="Storage Period" [(ngModel)]="selected_data.storage_period"></ion-input>
+  </div>
+  <!-- <button class="continue_button finish_button" ion-button block color="secondary" (click)="goToContentDetails( )" icon-right
+    [disabled]="!temp_data.size_of_container|| !temp_data.delivery_mode|| !selected_data.number_of_bl|| !selected_data.storage_period">
+        </button> -->
+  <div class="button_group" style="z-index: 100;">
+    <button class="finish_button" ion-button color="secondary" icon-right [disabled]="!temp_data.size_of_container|| !temp_data.delivery_mode|| !selected_data.number_of_bl|| !selected_data.storage_period"
+      (click)="goToContentDetails( )">Continue</button>
+  </div>
+</ion-content>

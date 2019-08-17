@@ -1,0 +1,48 @@
+page-notification {
+  .notifications {
+
+    &--title {
+      font-size: 21px;
+      line-height: 22px;
+      letter-spacing: -0.09px;
+      color: #011f46;
+      text-transform: capitalize;
+      font-weight: 600;
+      padding-left: 80px;
+    }
+
+    &--searchBtn {
+      font-size: 19px;
+      color: #011f46;
+    }
+
+    &__item {
+      height: 94px;
+
+      & ion-icon {
+        font-size: 16px;
+      }
+
+      & .label  {
+        white-space: unset !important;
+      }
+      &--img {
+        transform: scale(.55);
+        left: 10px;
+      }
+
+      &--main {
+        color: #011f46;
+        line-height: 20px;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      &--sub {
+        font-size: 14px;
+        color: #a4afbd;
+        line-height: 19px;
+      }
+    }
+  }
+}

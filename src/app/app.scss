@@ -1,0 +1,608 @@
+// http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+// This is what Nana Kwame added
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:500,600,700');
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-weight: 300;
+  font-style: normal;
+  src: url('../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Regular.ttf');
+}
+
+.ion-app.md {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.scroll-content {
+  // overflow-y: hidden;
+}
+
+.toolbar, .toolbar-ios {
+  min-height: 28px !important;
+  background-color: #f5f5f5;
+  border-bottom: unset;
+}
+
+
+
+ion-icon {
+  &[class*="custom-"] {
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: #f7f9fc;
+    width: 1em;
+    height: 1em;
+  }
+
+  &[class*="custom-headset"] {
+    mask-image: url(../assets/headphones.svg)
+  }
+
+  &[class*="custom-notification"] {
+    mask-image: url(../assets/notification.svg)
+  }
+
+  &[class*="custom-boat"] {
+    mask-image: url(../assets/img/porthub_icon.png);
+  }
+
+  &[class*="custom-focus"] {
+    mask-image: url(../assets/img/center_focus_strong_24_px.svg);
+  }
+
+}
+
+.alert .alert-title {}
+
+.alert .alert-wrapper {
+  border-radius: 23px;
+  width: 280px;
+}
+
+.tabs .tabbar {
+  background-color: #f7f9fc;
+}
+
+.tabs[tabsLayout="icon-top"] .has-icon .tab-button-text {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #011f46;
+  font-size: 11px;
+
+}
+
+.tabs .tab-button[aria-selected="true"] .tab-button-text {
+  color: #0d92ff;
+}
+
+.tabs .tab-button-icon {
+  font-size: 2.5rem;
+  color: #011f46;
+}
+
+.ion-ios-custom-home-icon {
+  content: url(../assets/img/home_on.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: #124676;
+  border-radius: 50%;
+}
+
+.ion-ios-custom-home-icon-outline {
+  content: url(../assets/img/home_off.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: transparent;
+}
+
+.tabs .tab-button[aria-selected="true"] .ion-custom-home-icon {
+  content: url(../assets/img/home_on.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: #124676;
+  border-radius: 50%;
+}
+
+
+
+.ion-md-custom-bell-icon,
+.ion-ios-custom-bell-icon {
+  content: url(../assets/img/alarm.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  // background-color: #124676;
+}
+
+
+
+.tabs .tab-button .ion-custom-home-icon {
+  content: url(../assets/img/home_off.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: transparent;
+}
+
+.ion-ios-custom-track-icon,
+.ion-md-custom-track-icon {
+  content: url(../assets/img/track_on.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: #124676;
+  border-radius: 50%;
+}
+
+.ion-ios-custom-track-icon-outline,
+.ion-md-custom-track-icon-outline {
+  content: url(../assets/img/track_off.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: transparent;
+  border-radius: 50%;
+}
+
+.tabs-md .tab-button[aria-selected="true"] .ion-md-custom-track-icon {
+  content: url(../assets/img/track_on.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: #124676;
+  border-radius: 50%;
+}
+
+.tabs-md .tab-button .ion-md-custom-track-icon {
+  content: url(../assets/img/track_off.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: transparent;
+  border-radius: 50%;
+}
+
+.ion-ios-custom-profile-icon,
+.ion-md-custom-profile-icon {
+  content: url(../assets/img/profile_on.svg);
+  width: 3rem;
+  height: 3rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: #124676;
+  border-radius: 50%;
+}
+
+.ion-ios-custom-profile-icon-outline,
+.ion-md-custom-profile-icon-outline {
+  content: url(../assets/img/profile_off.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: transparent;
+}
+
+.tabs-md .tab-button[aria-selected="true"] .ion-md-custom-profile-icon {
+  content: url(../assets/img/profile_on.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: #124676;
+  border-radius: 50%;
+}
+
+.tabs-md .tab-button .ion-md-custom-profile-icon {
+  content: url(../assets/img/profile_off.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: transparent;
+}
+
+.ion-ios-custom-invoices-icon,
+.ion-md-custom-invoices-icon {
+  content: url(../assets/img/invoices_on.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 1;
+  background: #124676;
+  border-radius: 50%;
+  // transform: rotate(90deg);
+}
+
+.ion-ios-custom-bell-icon,
+.ion-md-custom-bell-icon {
+  content: url(../assets/img/ios-notifications.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 1;
+  border-radius: 50%;
+  // transform: rotate(90deg);
+}
+
+.ion-ios-custom-invoices-icon-outline,
+.ion-md-custom-invoices-icon-outline {
+  content: url(../assets/img/invoices_off.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 1;
+  background: transparent;
+  // transform: rotate(90deg);
+}
+
+.tabs-md .tab-button[aria-selected="true"] .ion-md-custom-invoices-icon {
+  content: url(../assets/img/invoices_on.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: #124676;
+  border-radius: 50%;
+  // transform: rotate(90deg);
+}
+
+.tabs-md .tab-button .ion-md-custom-invoices-icon {
+  content: url(../assets/img/invoices_off.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: transparent;
+  // transform: rotate(90deg);
+}
+
+.ion-ios-custom-calculator-icon {
+  content: url(../assets/img/calculator_on.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: #124676;
+  border-radius: 50%;
+}
+
+.ion-ios-custom-calculator-icon-outline {
+  content: url(../assets/img/calculator_off.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: transparent;
+}
+
+.tabs-md .tab-button[aria-selected="true"] .ion-md-custom-calculator-icon {
+  content: url(../assets/img/calculator_on.svg);
+  width: 3rem;
+  height: 3rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: #124676;
+  border-radius: 50%;
+}
+
+.tabs-md .tab-button .ion-md-custom-calculator-icon {
+  content: url(../assets/img/calculator_off.svg);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 8px;
+  opacity: 0.9;
+  background: transparent;
+}
+
+.categorySelect {
+  background-color: #011f46;
+  opacity: .95;
+
+}
+
+.categorySelect.alert .alert-title {
+  font-size: 20px;
+  letter-spacing: .25px;
+  color: black;
+}
+
+.alert {
+  & .alert-button-group {
+    font-size: 14px;
+    flex-direction: row !important;
+  }
+
+  & .alert-button .button-inner {
+    color: #606060;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 1.25px;
+  }
+}
+
+ion-alert.alert-top {
+  padding-top: 35vh;
+}
+
+.tabs .tabbar {
+  border: none;
+}
+
+#cart_button {
+  //   text-align: right;
+  padding: 5px 0 0px 1.7rem;
+  font-size: 3rem;
+  color: #fff;
+  position: absolute;
+  right: 1.5rem;
+}
+
+#cart_button ion-badge {
+  //   text-align: right;
+  border-radius: 50%;
+  margin-top: 8px; //   margin-left:10px;
+  font-size: 1rem;
+  color: #fff;
+  position: absolute;
+  right: -10px;
+  height: 20px;
+  width: 20px;
+  padding: 5px 3px; //   background: transparent;
+}
+
+.alert-wrapper {
+  max-width: 350px !important;
+  border-radius: 23px;
+}
+
+.empty_placeholder {
+  text-align: center;
+  font-size: 18px;
+  color: #124676;
+  padding-top: 30vh;
+}
+
+.button_splitter {
+  width: 50%;
+}
+
+.button_splitter button {
+  width: 100%;
+  border-radius: 0;
+  margin: 0;
+  height: 50px;
+}
+
+// .button_splitter :last-child{
+//   position: absolute;
+//   right:0;
+// }
+.button_group {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.label_name {
+  text-align: center;
+  margin: 25px 0 0 0;
+  font-weight: 500;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #124676;
+}
+
+.label_dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  background: #124676;
+  margin: 8px auto; // border-radius: 100%;
+}
+
+.back_btn {
+  position: absolute;
+  top: 27px;
+  width: 25px;
+  left: 25px;
+  transform: rotate(180deg);
+}
+
+.close_btn {
+  position: absolute;
+  top: 27px;
+  width: 25px;
+  right: 25px; // transform:rotate(180deg);
+}
+
+.header-md::after,
+.tabs-md[tabsPlacement="top"]>.tabbar::after,
+.footer-md::before,
+.tabs-md[tabsPlacement="bottom"]>.tabbar::before {
+  background-image: none;
+}
+
+.v2_heading {
+  text-align: center;
+  font-weight: 600;
+  color: #124676;
+  font-size: 17px;
+  letter-spacing: 1px;
+  transform: translateX(5%);
+}
+
+
+// .tabs .tab-button-icon {
+//   color: #3a9afd;
+
+// }
+
+.tabs-md .tab-button[aria-selected="true"] .ion-md-custom-bell-icon {
+  content: url(../assets/img/ios-notifications-outline.svg);
+  padding: 8px;
+  opacity: 0.9;
+  background: #124676;
+  border-radius: 50%;
+  transform: translateY(-5%);
+}
+
+.toolbar {
+  padding: 4px;
+  min-height: 28px;
+}
+
+.tabs .tab-button {
+  color: #011f46 !important;
+}
+
+.action-sheet-container {
+  background-color: #011f46 !important;
+  opacity: .95;
+  animation: fadein .2s;
+}
+
+.action-sheet .action-sheet-icon {
+  color: #0d92ff
+}
+
+.action-sheet-group {
+  border-radius: 20px;
+  height: 34vh;
+  transform: translateY(10%);
+  overflow: unset;
+}
+
+.action-sheet .action-sheet-title {
+  font-size: 18px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #011f46;
+}
+
+.action-sheet-ios .action-sheet-container {
+  padding: unset;
+}
+
+.action-sheet-ios .action-sheet-title {
+  text-align: start;
+  font-size: 1.6rem;
+  color: #757575;
+  padding: 11px 16px 17px;
+  border-bottom: unset;
+}
+
+.action-sheet-ios .action-sheet-button {
+  text-align: start;
+  position: relative;
+  overflow: hidden;
+  min-height: 4.8rem;
+  font-size: 1.6rem;
+  color: #222;
+  background: transparent;
+  padding: 0 16px;
+  border-bottom: unset;
+}
+
+.alert .alert-radio-group,
+.alert .alert-checkbox-group {
+  border-top: none !important;
+}
+
+.alert .alert-tappable .button-inner {
+  padding-left: 4%;
+}
+
+.finish_button {
+  position: relative;
+  width: 328px;
+  left: 0;
+  right: 0;
+  margin-top: 100px;
+  // margin-left: 10%;
+  bottom: 16px;
+  border-radius: 0;
+  height: 50px;
+  // background-color: #0d92ff;
+  height: 48px;
+  border-radius: 8px;
+  text-transform: none;
+  box-shadow: none;
+}
+
+#faux_header {
+
+  height: 56px !important;
+  background-color: white;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 1px 5px 0 rgba(135, 148, 169, 0.10);
+
+}
+
+#back_button {
+  text-align: left;
+  padding: 5px 0 0px 1.7rem;
+  font-size: 2.5rem;
+  color: #011f46;
+  position: absolute;
+}
+
+#faux_title {
+  margin: 0;
+  text-align: center;
+  padding-top: 12px;
+  color: #011f46;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 22px;
+  letter-spacing: -0.09px;
+
+}
+
+#cart_button {
+  color: #011f46;
+}
+
+#cart_button ion-badge {
+  transform: translateY(-45px);
+}
+
+
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: .95;
+  }
+}

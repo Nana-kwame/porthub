@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color='light' class='page-header'>
+  </ion-toolbar>
+
+  <ion-toolbar id="faux_header" color='plain'>
+    <ion-icon name="arrow-back" id="back_button" (click)="onBackTapped( )"></ion-icon>
+    <p id="faux_title">Vessel Handling</p>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="main_body">
+
+  <div class="inner_div">
+    <ion-item class="option_select">
+      <ion-select [(ngModel)]="vesselHandlingData.callPurposeId" multiple="false" placeholder="Call Purpose"
+        [selectOptions]="purposeSelectOptions" (ionChange)="onCallPurposeChange( )">
+        <ion-option *ngFor="let purpose of purposes" value="{{purpose.id}}">{{purpose.purpose}}</ion-option>
+
+      </ion-select>
+    </ion-item>
+    <br />
+    <div *ngIf="vesselHandlingData.callPurposeId">
+      <div *ngIf="vesselHandlingData.cpName!='Anchorage'">
+        <ion-item class="option_select">
+          <ion-select [(ngModel)]="vesselHandlingData.vessel" multiple="false" placeholder="Vessel Type"
+            [selectOptions]="vesselTypeSelectOptions">
+            <ion-option *ngFor="let vessel of vesselTypes" value="{{vessel.name}}">{{vessel.name}}</ion-option>
+
+          </ion-select>
+        </ion-item>
+        <br />
+        <ion-item class="option_select">
+          <ion-select [(ngModel)]="vesselHandlingData.lengthId" multiple="false" placeholder="Length Overall"
+            [selectOptions]="lengthOverallSelectOptions" (ionChange)="onLOAChange( )">
+            <ion-option *ngFor="let lengthOverall of lengthOveralls" value="{{lengthOverall.id}}">{{addAbove(lengthOverall.fromQuantity)}}m
+              {{changer(lengthOverall.toQuantity)}}{{changerMeasurement(lengthOverall.toQuantity)}}</ion-option>
+
+          </ion-select>
+        </ion-item>
+        <br />
+      </div>
+      <ion-input type="number" placeholder="Gross Tonnage" [(ngModel)]="vesselHandlingData.grossTonnage"></ion-input>
+      <br />
+      <ion-input type="number" placeholder="Duration (Minimum of 3 days)" [(ngModel)]="vesselHandlingData.duration"></ion-input>
+      <br />
+      <!-- <button class="continue_button" ion-button block color="secondary" (click)="goToCalculatorResult( )" icon-right>
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-90 id="button_text">Continue</ion-col>
+                    <ion-col width-10>
+                        <ion-icon name="arrow-forward"></ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </button> -->
+
+    </div>
+
+  </div>
+  <div class="button_group" style="z-index: 100;">
+    <button class="finish_button" ion-button (click)="goToCalculatorResult( )" [disabled]="!vesselHandlingData.callPurposeId || !vesselHandlingData.vessel || !vesselHandlingData.lengthId || !vesselHandlingData.grossTonnage || !vesselHandlingData.duration">Continue</button>
+  </div>
+</ion-content>

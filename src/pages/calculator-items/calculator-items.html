@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left (click)="onBackTapped( )">
+      <button ion-button icon-only color="plain">
+        <ion-icon name="arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title style="color:#fff">Select Item(s)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="main_form">
+  <div class="loader" *ngIf="loading">
+    <ion-spinner color="primary">
+    </ion-spinner>
+    <br> Loading Items...
+  </div>
+  <div *ngIf="!loading">
+    <ion-searchbar placeholder="Search" [(ngModel)]="searchQuery" debounce="500" (ionInput)="searchItems( )"></ion-searchbar>
+    <div class="item_list">
+      <ion-item *ngFor="let calc_item of calc_items" (click)="showItemOptions( calc_item)">
+        <span class="item_label">{{calc_item.item}} </span>
+        <span class="item_label" *ngIf="calc_item.groupCategoryName != ''">({{calc_item.groupCategoryName}})</span><span class="item_selected" *ngIf="calc_item.optionSelected"><ion-icon name="checkmark-circle-outline"></ion-icon></span>
+      </ion-item>
+    </div>
+    <button ion-button full color="secondary" class="done_button" (click)="generateCalculateJSON( )" *ngIf="show_generate">Continue</button>
+  </div>
+</ion-content>

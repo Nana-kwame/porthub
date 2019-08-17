@@ -1,0 +1,246 @@
+page-shore-handling-invoice {
+  #initial_block ion-icon {
+    text-align: center;
+    display: block;
+    font-size: 5rem;
+    color: #fff;
+  }
+
+  #initial_block {
+    height: 18rem !important;
+    background-color: #124676;
+    padding: 8vh 20% 0px 20% !important;
+  }
+
+  #initial_block button {
+    margin-top: 2rem;
+  }
+
+  .immovable {
+    position: absolute !important;
+    width: 100%;
+  }
+
+  .scroll-content {
+    // margin-bottom: 0 !important;
+  }
+
+  .main_content {
+    background-color: #f8f9fb;
+  }
+
+  #faux_header {
+    height: 44px;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 1px 5px 0 rgba(135, 148, 169, 0.10);
+  }
+
+  #back_button {
+    text-align: left;
+    padding: 5px 0 0px 1.7rem;
+    position: absolute;
+  }
+
+  #faux_title {
+    margin: 0;
+    /* display: inline-block; */
+    text-align: center;
+    padding-top: 12px;
+
+  }
+
+  .invoice_data {
+    background: #f8f9fb;
+
+    s &--header {
+      font-size: 12px;
+      color: #0d92ff;
+      letter-spacing: .5px;
+      font-weight: 600;
+      margin-left: 16px;
+    }
+  }
+
+  .invoice_group_separator {
+    width: 100%;
+    background-color: #dededf;
+    padding: 10px 0 0 0;
+  }
+
+  .info {
+    display: block;
+  }
+
+  .calc_info {
+    position: absolute;
+    left: 1rem;
+    width: 70%;
+    padding: 1rem 0 1rem 0;
+  }
+
+  .calc_price {
+    position: absolute;
+    right: 1rem;
+    text-align: right;
+    width: 25%;
+    padding: 1rem 0 1rem 0;
+  }
+
+  .result_list {
+    height: 60px;
+    position: relative;
+    margin-bottom: 10px;
+
+  }
+
+
+
+
+
+  .result_item {
+    font-size: 14px;
+    color: #011f46;
+    font-weight: 500;
+  }
+
+  .result_details {
+    padding-top: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #011f46;
+  }
+
+  .result_value {
+    font-size: 12px;
+    color: #8794a8;
+  }
+
+  .top_balance {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .half_1_overall_total {
+    width: 50%;
+    padding: 20px 10px 20px 10px;
+    float: left;
+    font-size: 14px;
+    font-weight: 700;
+    color: #011f46;
+  }
+
+  .half_2_overall_total {
+    width: 50%;
+    float: right;
+    padding: 20px 10px 20px 10px;
+    font-size: 16px;
+    text-align: right;
+    color: #011f46;
+    font-weight: bold;
+  }
+
+  .overall_total {
+    height: 60px;
+  }
+
+  .loader {
+    text-align: center;
+    padding-top: 40vh;
+    color: #124676;
+  }
+
+  .scroll-content {
+    margin-bottom: 0 !important;
+  }
+
+  .result_list:nth-child(1n) {
+    border-left: 2.5px solid #0d92ff;
+  }
+
+  .result_list:nth-child(2n) {
+    border-left: 2.5px solid #ffa91e;
+  }
+
+  .result_list:nth-child(3n) {
+    border-left: 2.5px solid #00cd8f;
+  }
+
+
+  .result_list:nth-child(4n) {
+    border-left: 2.5px solid #20d1ec;
+  }
+
+  .result_list:nth-child(5n) {
+    border-left: 2.5px solid #0d92ff;
+
+  }
+
+
+  // .finish_button {
+  //   width: 100%;
+  //   left: 0;
+  //   right: 0;
+  //   margin: 0rem auto 0rem auto;
+  //   position: fixed;
+  //   bottom: 0;
+  //   border-radius: 0;
+  //   height: 50px;
+  // }
+  // .continue_button ion-grid {
+  //   padding: 0;
+  // }
+  // .continue_button ion-icon {
+  //   font-size: 3rem;
+  //   padding-left: 0;
+  //   padding-right: 2rem;
+  // }
+  // .continue_button ion-col {
+  //   //    padding-right: 2rem;
+  //   padding-left: 0;
+  // }
+  // #button_text {
+  //   text-align: center;
+  //   font-weight: 400;
+  //   padding-top: 1.2rem;
+  //   font-size: 1.6rem;
+  // }
+  .button_splitter {
+    width: 50%;
+  }
+
+  .button_splitter button {
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+    height: 50px;
+  }
+
+  // .button_splitter :last-child{
+  //   position: absolute;
+  //   right:0;
+  // }
+  .button_group {
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0 7%;
+    background: #f8f9fb;
+    position: fixed !important;
+    // position: relative !important;
+  }
+
+  .continue_button {
+    display: inline-block;
+    margin-top: 25px !important;
+  }
+
+  .addBtn {
+    position: absolute;
+    transform: translateX(300px);
+    box-shadow: none;
+  }
+}

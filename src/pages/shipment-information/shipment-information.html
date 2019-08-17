@@ -1,0 +1,105 @@
+<!--
+  Generated template for the ShipmentInformation page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <div class='page__toolbar'></div>
+</ion-header>
+
+
+<ion-content class='main__content'>
+  <div class="main__content--card--image">
+    <img src='./../../assets/img/ship-icon.png' />
+  </div>
+
+  <div class='blue_quarter'>
+    <button ion-button icon-only class='blue_quarter--close_btn' (click)="closeTapped( )">
+      <ion-icon name='close' color='plain'></ion-icon>
+    </button>
+  </div>
+
+
+
+  <ion-card class="main__content--card">
+
+
+    <ion-card-header class="main__content--card_header"> Vessel Name</ion-card-header>
+    <p class="main__content--card_subheader"> {{vesselInfo?.Vessel}}</p>
+
+    <ion-card-content class="main__content--card_content">
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <p class="main__content--card_content--title">Vessel Number</p>
+            <p class="main__content--card_content--value">{{vesselInfo?.VesselGT}}</p>
+          </ion-row>
+
+          <ion-row>
+              <p class="main__content--card_content--title">Vessel Type</p>
+              <p class="main__content--card_content--value">{{vesselInfo?.VesselType}}</p>
+            </ion-row>
+
+            <ion-row>
+                <p class="main__content--card_content--title">Estimated Date of arrival</p>
+                <p class="main__content--card_content--value">{{vesselInfo?.ETA | date:'dd/MM/yyyy'}}</p>
+              </ion-row>
+
+              <ion-row>
+                  <p class="main__content--card_content--title">Booking Status</p>
+                  <p class="main__content--card_content--value">{{vesselInfo?.BookingStatus}}</p>
+                </ion-row>
+
+          <ion-row>
+            <p class="main__content--card_content--title">Cargo</p>
+            <p class="main__content--card_content--value">{{vesselInfo?.CargoDetails}}</p>
+          </ion-row>
+
+          <ion-row>
+            <p class="main__content--card_content--title">Company</p>
+            <p class="main__content--card_content--value">{{vesselInfo?.Company}}</p>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+
+  <!-- <div class="invoice_data">
+    <div class="first_entry">
+      <ion-grid>
+        <ion-row>
+          <ion-col width-50 class="label">Vessel Number</ion-col>
+          <ion-col width-50 class="data">FBJ001</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="first_entry">
+      <ion-grid>
+        <ion-row>
+          <ion-col width-50 class="label">Date of Arrival</ion-col>
+          <ion-col width-50 class="data">24 May 2017</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="first_entry">
+      <ion-grid>
+        <ion-row>
+          <ion-col width-50 class="label">Container No.</ion-col>
+          <ion-col width-50 class="data">FBI491</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="final_entry">
+      <ion-grid>
+        <ion-row>
+          <ion-col width-50 class="label">Crew</ion-col>
+          <ion-col width-50 class="data">Jetsons</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <button ion-button block color="secondary" ">Close</button>
+  </div> -->
+
+</ion-content>

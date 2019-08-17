@@ -1,0 +1,105 @@
+page-tracking {
+
+  #faux_title {
+    text-align: left;
+    margin-left: 16px;
+  }
+
+  .tracking-header {
+    height: 56px;
+    background-color: white !important;
+    box-shadow: 0 1px 5px 0 rgba(135, 148, 169, 0.10) !important;
+
+    &--title {
+      color: #011f46;
+      font-size: 22px;
+      line-height: 22px;
+      letter-spacing: -.09px;
+      font-weight: bolder;
+      margin-left: 16px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      padding-top: 16px;
+      padding-bottom: 8px;
+    }
+  }
+
+
+  .tracking_data {
+    padding: 3.5rem 17px 0 17px;
+
+    &--image {
+      transform: scale(0.6) translate(23%, -30%);
+      height: 100px;
+    }
+
+    &--header {
+      text-align: center;
+      font-weight: 600;
+      font-size: 18px;
+      color: #011f46;
+    }
+
+    &--subheader {
+      text-align: center;
+      font-weight: 400;
+      font-size: 14px;
+      color: #8794a8;
+    }
+
+    &--input {
+      color: #011f46;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0;
+      font-weight: 600;
+    }
+  }
+
+  .tracking_data ion-input {
+    border: #e0e4e8 1px solid;
+    margin-bottom: 3rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: white;
+    color: #011f46;
+    height: 54px;
+  }
+
+  .tracking_data ion-input:focus {}
+
+  .tracking_data button {
+
+    font-weight: 400;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+
+  .finish_button {
+    width: 100%;
+
+    &--icon {
+      transform: translateX(80px);
+    }
+  }
+
+  .main_content {
+    background-color: #f8f9fb;
+  }
+  @media screen and(min-width: 600px){
+    .tracking_data {
+      &--image {
+        transform: scale(0.6) translate(39%, -30%);
+      }
+    }
+  }
+
+  @media screen and(min-width: 568px){
+    .tracking_data {
+      &--image {
+        transform: scale(0.6) translate(35%, -30%);
+      }
+    }
+  }
+}
